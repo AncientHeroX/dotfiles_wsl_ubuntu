@@ -1,1 +1,1 @@
-# dotfiles_wsl_ubuntu
+I learned about dotfiles at [dotfiles.eieio.xyz](http://dotfiles.eieio.xyz).
