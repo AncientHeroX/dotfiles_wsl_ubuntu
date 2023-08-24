@@ -13,8 +13,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# GUI settings
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 export LIBGL_ALWAYS_INDIRECT=0
+
+# Syntax highlight manual pages
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # CUSTOM ALIAS
 alias ls='ls --color=auto'
