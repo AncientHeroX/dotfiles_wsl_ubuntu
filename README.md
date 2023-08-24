@@ -1,1 +1,9 @@
 I learned about dotfiles at [dotfiles.eieio.xyz](http://dotfiles.eieio.xyz).
+
+## TODO
+- Terminal Preferences
+- Change Shell to ZSH
+- .zshrc
+- Git (config and SSH)
+- .config
+- .poshtemplates
