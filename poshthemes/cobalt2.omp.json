@@ -5,6 +5,11 @@
       "alignment": "left",
       "segments": [
         {
+          "template": "\u256d\u2500[ {{ if eq .Code 0 }}<#3CB043>:){{ else }}<#FF0000>>:({{ end }} ",
+          "type": "text",
+          "style": "plain"
+        },
+        {
           "background": "#1478DB",
           "foreground": "#000000",
           "leading_diamond": "\ue0b6",
@@ -34,6 +39,11 @@
           "style": "diamond",
           "template": " {{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00> \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
+        },
+        {
+          "style": "plain",
+          "template": "\n\u2570\u2500[ $",
+          "type": "text"
         }
       ],
       "type": "prompt"
