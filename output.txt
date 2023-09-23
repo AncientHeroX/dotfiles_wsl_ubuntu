@@ -1,0 +1,267 @@
+
+Version: 18.9.1
+
+Shell: zsh (5.8.1)
+
+Prompt:
+
+╭─[ :) ~/.dotfiles  main  ?2 ~2 
+╰─[ $ 
+
+Segments:
+
+ConsoleTitle(false)                       -   0 ms
+Text(true)                                -   0 ms
+Path(true)                                -   2 ms
+Git(true)                                 -  12 ms
+Python(false)                             - 139 ms
+Text(true)                                -   1 ms
+
+Run duration: 143.1468ms
+
+Cache path: /home/eduardglez/.cache/oh-my-posh
+
+Config path: /home/eduardglez/.poshthemes/cobalt2.omp.json
+
+Logs:
+
+[DEBUG] 11:13:33.533 shell.go:Getenv:392 → tmux
+[TRACE] 11:13:33.533 shell.go:Getenv(TERM_PROGRAM) - 41.1µs
+[DEBUG] 11:13:33.533 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.533 shell.go:Getenv(XDG_CACHE_HOME) - 3.1µs
+[TRACE] 11:13:33.533 shell_unix.go:CachePath() - 16.6µs
+[DEBUG] 11:13:33.533 shell.go:Getenv:392 → /home/eduardglez/.poshthemes/cobalt2.omp.json
+[TRACE] 11:13:33.533 shell.go:Getenv(POSH_THEME) - 4.5µs
+[DEBUG] 11:13:33.533 shell_unix.go:Platform:77 → ubuntu
+[TRACE] 11:13:33.533 shell.go:resolveConfigPath() - 15µs
+[TRACE] 11:13:33.533 shell.go:Init() - 184.1µs
+[TRACE] 11:13:33.533 shell.go:Flags() - 0s
+[TRACE] 11:13:33.534 config.go:loadConfig() - 608.8µs
+[TRACE] 11:13:33.534 shell.go:Flags() - 0s
+[DEBUG] 11:13:33.534 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.534 shell.go:Getenv(OMP_CACHE_DISABLED) - 2.6µs
+[DEBUG] 11:13:33.534 shell.go:Shell:632 → no shell name provided in flags, trying to detect it
+[DEBUG] 11:13:33.534 shell.go:Shell:640 → process name: zsh
+[TRACE] 11:13:33.534 shell.go:Shell() - 585.5µs
+[DEBUG] 11:13:33.534 shell.go:Getenv:392 → 5.8.1
+[TRACE] 11:13:33.534 shell.go:Getenv(POSH_SHELL_VERSION) - 2.6µs
+[DEBUG] 11:13:33.534 debug.go:PrintDebug:22 → Segment: Title
+[DEBUG] 11:13:33.534 text.go:Render:70 → Rendering template: 
+[DEBUG] 11:13:33.534 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.534 shell.go:Getenv(POSH_CURSOR_LINE) - 2.1µs
+[DEBUG] 11:13:33.534 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.534 shell.go:Getenv(POSH_CURSOR_COLUMN) - 1.7µs
+[TRACE] 11:13:33.534 shell.go:Flags() - 0s
+[TRACE] 11:13:33.534 shell.go:Flags() - 0s
+[TRACE] 11:13:33.534 shell.go:Shell() - 100ns
+[TRACE] 11:13:33.534 shell.go:Shell() - 0s
+[TRACE] 11:13:33.534 shell.go:Flags() - 200ns
+[TRACE] 11:13:33.534 shell.go:GOOS() - 100ns
+[DEBUG] 11:13:33.534 shell.go:Pwd:422 → /home/eduardglez/.dotfiles
+[TRACE] 11:13:33.534 shell.go:Pwd() - 28.7µs
+[TRACE] 11:13:33.534 shell.go:GOOS() - 0s
+[DEBUG] 11:13:33.534 segment.go:SetEnabled:497 → Segment: Text
+[TRACE] 11:13:33.534 shell_unix.go:Root() - 800ns
+[TRACE] 11:13:33.534 shell.go:Shell() - 100ns
+[TRACE] 11:13:33.534 shell.go:StatusCodes() - 0s
+[DEBUG] 11:13:33.534 shell_unix.go:IsWsl:35 → true
+[TRACE] 11:13:33.534 shell_unix.go:IsWsl() - 32µs
+[TRACE] 11:13:33.534 shell.go:Flags() - 300ns
+[TRACE] 11:13:33.535 shell.go:Flags() - 200ns
+[TRACE] 11:13:33.535 shell.go:Pwd() - 200ns
+[TRACE] 11:13:33.535 shell.go:Pwd() - 100ns
+[TRACE] 11:13:33.535 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.535 shell.go:GOOS() - 100ns
+[DEBUG] 11:13:33.535 segment.go:SetEnabled:497 → Segment: Path
+[DEBUG] 11:13:33.535 segment.go:SetEnabled:497 → Segment: Git
+[DEBUG] 11:13:33.535 shell.go:TemplateCache:813 → environment: [DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=172.27.0.1:0 HOME=/home/eduardglez HOSTTYPE=x86_64 LANG=C.UTF-8 LOGNAME=eduardglez NAME=Gonzalez-Laptop OLDPWD=/home/eduardglez PATH=/home/eduardglez/.cargo/bin:/home/eduardglez/.nvm/versions/node/v20.5.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python310/Scripts/:/mnt/c/Python310/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/Gonzalez E/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Gonzalez E/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2023.2/bin:/mnt/c/Program Files/LOVE PULSE_SERVER=unix:/mnt/wslg/PulseServer PWD=/home/eduardglez/.dotfiles SHELL=/usr/bin/zsh SHLVL=1 TERM=screen-256color TERM_PROGRAM=tmux TERM_PROGRAM_VERSION=3.2a TMUX=/tmp/tmux-1000/default,2516,0 TMUX_PANE=%0 TMUX_PLUGIN_MANAGER_PATH=/home/eduardglez/.tmux/plugins/ USER=eduardglez WAYLAND_DISPLAY=wayland-0 WSL2_GUI_APPS_ENABLED=1 WSLENV=WT_SESSION::WT_PROFILE_ID WSL_DISTRO_NAME=Ubuntu WSL_INTEROP=/run/WSL/2512_interop WT_PROFILE_ID={51855cb2-8cce-5362-8f54-464b92b32386} WT_SESSION=6ba12aa8-fb53-49e6-b154-aad217d20795 XDG_RUNTIME_DIR=/run/user/1000/ _=/usr/local/bin/oh-my-posh tmux_version=3.2 LIBGL_ALWAYS_INDIRECT=0 MANPAGER=sh -c 'col -bx | bat -l man -p' NVM_DIR=/home/eduardglez/.nvm NVM_CD_FLAGS=-q NVM_BIN=/home/eduardglez/.nvm/versions/node/v20.5.1/bin NVM_INC=/home/eduardglez/.nvm/versions/node/v20.5.1/include/node POSH_THEME=/home/eduardglez/.poshthemes/cobalt2.omp.json POSH_SHELL_VERSION=5.8.1 POSH_PID=2705 POWERLINE_COMMAND=oh-my-posh CONDA_PROMPT_MODIFIER=false POSH_PROMPT_COUNT=91]
+[DEBUG] 11:13:33.535 shell_unix.go:IsWsl:35 → true
+[TRACE] 11:13:33.535 shell_unix.go:IsWsl() - 3.2µs
+[TRACE] 11:13:33.535 shell.go:Pwd() - 100ns
+[TRACE] 11:13:33.535 shell.go:Pwd() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.535 shell.go:Shell() - 100ns
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:Shell() - 100ns
+[DEBUG] 11:13:33.535 shell.go:FileContent:517 ↓
+    5.15.90.1-microsoft-standard-WSL2
+    
+[TRACE] 11:13:33.535 shell.go:FileContent(/proc/sys/kernel/osrelease) - 39.9µs
+[TRACE] 11:13:33.535 shell_unix.go:IsWsl2() - 49.4µs
+[TRACE] 11:13:33.535 shell.go:Pwd() - 100ns
+[DEBUG] 11:13:33.535 properties.go:GetBool:22 → mapped_locations_enabled: true
+[DEBUG] 11:13:33.535 properties.go:GetString:28 → 
+[DEBUG] 11:13:33.535 properties.go:GetString:28 → 
+[TRACE] 11:13:33.535 shell.go:GOOS() - 200ns
+[DEBUG] 11:13:33.535 properties.go:GetString:28 → ~
+[DEBUG] 11:13:33.535 properties.go:GetKeyValueMap:46 → mapped_locations: map[]
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 300ns
+[TRACE] 11:13:33.535 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 100ns
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 100ns
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 0s
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 0s
+[DEBUG] 11:13:33.535 properties.go:GetString:28 → full
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 100ns
+[DEBUG] 11:13:33.535 properties.go:GetStringArray:52 → cycle: []
+[DEBUG] 11:13:33.535 properties.go:GetString:28 → NO DATA
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 100ns
+[DEBUG] 11:13:33.535 properties.go:GetString:28 → /
+[DEBUG] 11:13:33.535 properties.go:GetBool:22 → cycle_folder_separator: false
+[DEBUG] 11:13:33.535 properties.go:GetString:28 → %s
+[DEBUG] 11:13:33.535 properties.go:GetString:28 → %s
+[TRACE] 11:13:33.535 shell.go:PathSeparator() - 0s
+[TRACE] 11:13:33.535 shell.go:Pwd() - 100ns
+[DEBUG] 11:13:33.535 shell_unix.go:IsWsl:35 → true
+[TRACE] 11:13:33.535 shell_unix.go:IsWsl() - 2.8µs
+[TRACE] 11:13:33.536 shell.go:Flags() - 200ns
+[DEBUG] 11:13:33.536 properties.go:GetString:28 → environment
+[TRACE] 11:13:33.536 shell.go:Pwd() - 100ns
+[TRACE] 11:13:33.536 shell.go:GOOS() - 100ns
+[DEBUG] 11:13:33.536 segment.go:SetEnabled:497 → Segment: Python
+[DEBUG] 11:13:33.536 properties.go:GetStringArray:52 → extensions: [*.py *.ipynb pyproject.toml venv.bak]
+[DEBUG] 11:13:33.536 properties.go:GetStringArray:52 → folders: [.venv venv virtualenv env venv-win pyenv-win]
+[DEBUG] 11:13:33.536 properties.go:GetBool:22 → home_enabled: false
+[TRACE] 11:13:33.536 shell.go:Pwd() - 100ns
+[DEBUG] 11:13:33.536 properties.go:GetBool:22 → fetch_virtual_env: true
+[TRACE] 11:13:33.535 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.536 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.536 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.536 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.536 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.536 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.536 shell.go:GOOS() - 100ns
+[DEBUG] 11:13:33.536 shell.go:User:543 → eduardglez
+[TRACE] 11:13:33.536 shell.go:User() - 4.4µs
+[DEBUG] 11:13:33.536 shell.go:Host:555 → Gonzalez-Laptop
+[TRACE] 11:13:33.536 shell.go:Host() - 5.6µs
+[TRACE] 11:13:33.536 shell.go:GOOS() - 0s
+[DEBUG] 11:13:33.536 shell_unix.go:Platform:77 → ubuntu
+[DEBUG] 11:13:33.536 shell.go:Getenv:392 → 1
+[TRACE] 11:13:33.536 shell.go:Getenv(SHLVL) - 2.4µs
+[TRACE] 11:13:33.536 shell.go:TemplateCache() - 1.2172ms
+[TRACE] 11:13:33.536 shell.go:Flags() - 200ns
+[TRACE] 11:13:33.536 shell.go:Pwd() - 200ns
+[TRACE] 11:13:33.536 shell.go:GOOS() - 100ns
+[DEBUG] 11:13:33.536 segment.go:SetEnabled:497 → Segment: Text
+[TRACE] 11:13:33.536 shell.go:TemplateCache() - 500ns
+[DEBUG] 11:13:33.537 shell.go:RunCommand:573 → //wsl.localhost/Ubuntu/home/eduardglez/.dotfiles
+[TRACE] 11:13:33.537 shell.go:RunCommand(wslpath -m /home/eduardglez/.dotfiles) - 1.5575ms
+[TRACE] 11:13:33.537 shell.go:StackCount() - 200ns
+[DEBUG] 11:13:33.537 shell.go:RunCommand:573 → //wsl.localhost/Ubuntu/home/eduardglez/.dotfiles
+[TRACE] 11:13:33.537 shell_unix.go:DirIsWritable(/home/eduardglez/.dotfiles) - 8.3µs
+[TRACE] 11:13:33.537 shell.go:TemplateCache() - 100ns
+[TRACE] 11:13:33.537 shell.go:RunCommand(wslpath -m /home/eduardglez/.dotfiles) - 1.9846ms
+[TRACE] 11:13:33.537 shell.go:GOOS() - 100ns
+[DEBUG] 11:13:33.537 shell.go:CommandPath:594 → /usr/bin/git
+[TRACE] 11:13:33.537 shell.go:CommandPath(git) - 36µs
+[TRACE] 11:13:33.537 shell.go:HasCommand(git) - 41.1µs
+[TRACE] 11:13:33.537 shell.go:Pwd() - 200ns
+[TRACE] 11:13:33.537 shell.go:HasParentFilePath(.git) - 20.4µs
+[DEBUG] 11:13:33.537 properties.go:GetStringArray:52 → exclude_folders: []
+[TRACE] 11:13:33.537 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.537 shell.go:GOOS() - 0s
+[DEBUG] 11:13:33.537 properties.go:GetBool:22 → fetch_user: false
+[TRACE] 11:13:33.537 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.537 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.537 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.537 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.537 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.537 shell.go:GOOS() - 100ns
+[TRACE] 11:13:33.537 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.537 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.537 shell.go:GOOS() - 0s
+[TRACE] 11:13:33.537 shell.go:GOOS() - 0s
+[DEBUG] 11:13:33.537 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.537 shell.go:Getenv(POSH_GIT_STATUS) - 3µs
+[DEBUG] 11:13:33.537 properties.go:GetBool:22 → fetch_status: true
+[DEBUG] 11:13:33.537 properties.go:GetStringArray:52 → ignore_status: []
+[TRACE] 11:13:33.537 shell.go:GOOS() - 100ns
+[DEBUG] 11:13:33.537 properties.go:GetKeyValueMap:46 → status_formats: map[]
+[DEBUG] 11:13:33.537 properties.go:GetKeyValueMap:46 → untracked_modes: map[]
+[DEBUG] 11:13:33.537 properties.go:GetKeyValueMap:46 → ignore_submodules: map[]
+[DEBUG] 11:13:33.546 shell.go:RunCommand:573 ↓
+    # branch.oid 86dfca893d11e625e97df90986b9ce72bb50a948
+    # branch.head main
+    # branch.upstream origin/main
+    # branch.ab +0 -0
+    1 .M N... 100644 100644 100644 ec821fba2e30b3943b26c08be9d37f93e691d54b ec821fba2e30b3943b26c08be9d37f93e691d54b poshthemes/cobalt2.omp.json
+    1 .M N... 100644 100644 100644 8ff12cfa7fec477938fa209aa000529d67025fa4 8ff12cfa7fec477938fa209aa000529d67025fa4 zshrc
+    ? output.txt
+    ? "poshthemes/\\"
+[TRACE] 11:13:33.547 shell.go:RunCommand(git -C /home/eduardglez/.dotfiles --no-optional-locks -c core.quotepath=false -c color.status=false status -unormal --branch --porcelain=2) - 9.663ms
+[DEBUG] 11:13:33.547 properties.go:GetString:28 → 
+[DEBUG] 11:13:33.547 properties.go:GetInt:40 → branch_max_length: 0
+[DEBUG] 11:13:33.547 shell.go:HasFolder:487 → false
+[TRACE] 11:13:33.547 shell.go:HasFolder(/home/eduardglez/.dotfiles/.git/rebase-merge) - 19.4µs
+[DEBUG] 11:13:33.547 shell.go:HasFolder:487 → false
+[TRACE] 11:13:33.547 shell.go:HasFolder(/home/eduardglez/.dotfiles/.git/rebase-apply) - 8.6µs
+[DEBUG] 11:13:33.547 properties.go:GetString:28 → 
+[DEBUG] 11:13:33.547 shell.go:HasFilesInDir:458 → false
+[TRACE] 11:13:33.547 shell.go:HasFilesInDir(MERGE_MSG) - 19.9µs
+[DEBUG] 11:13:33.547 shell.go:HasFilesInDir:458 → false
+[TRACE] 11:13:33.547 shell.go:HasFilesInDir(CHERRY_PICK_HEAD) - 7.6µs
+[DEBUG] 11:13:33.547 shell.go:HasFilesInDir:458 → false
+[TRACE] 11:13:33.547 shell.go:HasFilesInDir(REVERT_HEAD) - 4.6µs
+[DEBUG] 11:13:33.547 shell.go:HasFilesInDir:458 → false
+[TRACE] 11:13:33.547 shell.go:HasFilesInDir(sequencer/todo) - 4.4µs
+[DEBUG] 11:13:33.547 properties.go:GetString:28 → ≡
+[DEBUG] 11:13:33.547 properties.go:GetBool:22 → fetch_upstream_icon: false
+[TRACE] 11:13:33.547 shell.go:TemplateCache() - 500ns
+[ERROR] 11:13:33.675 shell.go:CommandPath:597 → exec: "python": executable file not found in $PATH
+[TRACE] 11:13:33.675 shell.go:CommandPath(python) - 139.58ms
+[DEBUG] 11:13:33.675 shell.go:CommandPath:594 → /usr/bin/python3
+[TRACE] 11:13:33.675 shell.go:CommandPath(python3) - 32.8µs
+[DEBUG] 11:13:33.675 shell.go:HasFilesInDir:458 → false
+[TRACE] 11:13:33.675 shell.go:HasFilesInDir(pyvenv.cfg) - 7.3µs
+[DEBUG] 11:13:33.675 shell.go:HasFilesInDir:458 → false
+[TRACE] 11:13:33.675 shell.go:HasFilesInDir(pyvenv.cfg) - 3.9µs
+[DEBUG] 11:13:33.675 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.675 shell.go:Getenv(VIRTUAL_ENV) - 2.7µs
+[DEBUG] 11:13:33.675 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.675 shell.go:Getenv(CONDA_ENV_PATH) - 1.8µs
+[DEBUG] 11:13:33.675 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.675 shell.go:Getenv(CONDA_DEFAULT_ENV) - 1.7µs
+[DEBUG] 11:13:33.675 text.go:Render:70 → Rendering template: ╭─[ {{ if eq .Code 0 }}<#3CB043>:){{ else }}<#FF0000>>:({{ end }} 
+[DEBUG] 11:13:33.675 text.go:Render:70 ↓
+    Rendering template: 
+    ╰─[ $
+[TRACE] 11:13:33.675 shell.go:Shell() - 400ns
+[DEBUG] 11:13:33.675 text.go:Render:70 → Rendering template: {{ .Path }} 
+[DEBUG] 11:13:33.675 text.go:Render:70 → Rendering template:  {{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00>  {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} 
+[TRACE] 11:13:33.676 shell.go:TemplateCache() - 300ns
+[TRACE] 11:13:33.676 shell.go:TemplateCache() - 200ns
+[TRACE] 11:13:33.676 shell.go:Shell() - 200ns
+[TRACE] 11:13:33.676 shell.go:Shell() - 100ns
+[TRACE] 11:13:33.676 shell.go:TemplateCache() - 300ns
+[ERROR] 11:13:33.676 shell.go:FileContent:513 → open /home/eduardglez/.dotfiles/.git/logs/refs/stash: no such file or directory
+[TRACE] 11:13:33.676 shell.go:FileContent(/home/eduardglez/.dotfiles/.git/logs/refs/stash) - 15.6µs
+[TRACE] 11:13:33.676 shell.go:Shell() - 100ns
+[DEBUG] 11:13:33.676 text.go:Render:70 → Rendering template: plain
+[DEBUG] 11:13:33.676 text.go:Render:70 → Rendering template: diamond
+[DEBUG] 11:13:33.676 text.go:Render:70 → Rendering template: {{ if or (.Working.Changed) (.Staging.Changed) }}#FFC600{{ end }}
+[TRACE] 11:13:33.676 shell.go:TemplateCache() - 200ns
+[DEBUG] 11:13:33.676 text.go:Render:70 → Rendering template: diamond
+[DEBUG] 11:13:33.676 text.go:Render:70 → Rendering template: powerline
+[DEBUG] 11:13:33.676 text.go:Render:70 → Rendering template: plain
+[TRACE] 11:13:33.676 shell.go:Shell() - 0s
+[TRACE] 11:13:33.676 shell.go:Shell() - 100ns
+[TRACE] 11:13:33.676 shell.go:Shell() - 100ns
+[TRACE] 11:13:33.676 shell.go:Shell() - 100ns
+[TRACE] 11:13:33.676 shell.go:Flags() - 0s
+[DEBUG] 11:13:33.676 shell.go:Getenv:392 → NO DATA
+[TRACE] 11:13:33.676 shell.go:Getenv(XDG_CACHE_HOME) - 3.9µs
+[TRACE] 11:13:33.676 shell_unix.go:CachePath() - 14.5µs
+[TRACE] 11:13:33.676 shell.go:Flags() - 100ns

@@ -1,3 +1,10 @@
+# Run tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+# Enable colors
+autoload -U colors && colors
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -9,7 +16,10 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/eduardglez/.zshrc'
 
+
 autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
 compinit
 # End of lines added by compinstall
 
@@ -21,10 +31,11 @@ export LIBGL_ALWAYS_INDIRECT=0
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # CUSTOM ALIAS
-alias ls='ls --color=auto'
+alias ls='ls -F --color=auto'
 alias ll='ls -AlFh'
 alias la='ls -A'
 alias l='ls -CF'
+
 # cd but in the windows dir
 function cdwin() {
     if [ $# -eq 0 ]; then
@@ -37,6 +48,7 @@ function cdwin() {
 function cenv(){
     python3 -m $1 .venv/
 }
+
 function devserv() {
     echo "starting..."
     . .venv/bin/activate
@@ -52,6 +64,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+function fancygit() {
+    git log --graph --oneline --decorate --all
+}
+
 
 . "$HOME/.cargo/env"
 eval "$(oh-my-posh init zsh --config ~/.poshthemes/cobalt2.omp.json)"
+source /home/eduardglez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
