@@ -8,7 +8,9 @@
      ~/.zshrc: 
      ~/.gitconfig:
      ~/.poshthemes:
-
+     ~/.config/:
+       glob: true
+       path: ./config/*
 #- create:
 #    - ~/downloads
 #    - ~/.vim/undo-history
