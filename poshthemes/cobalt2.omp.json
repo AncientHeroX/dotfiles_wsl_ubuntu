@@ -5,12 +5,12 @@
       "alignment": "left",
       "segments": [
         {
-          "template": "\u256d\u2500[ {{ if eq .Code 0 }}<#3CB043>:){{ else }}<#FF0000>>:({{ end }} ",
-          "type": "text",
-          "style": "plain"
+          "style": "plain",
+          "template": "\u256d\u2500[ {{ if eq .Code 0 }}<#245026>:)</>{{ else }}<#8C3A3A>:(</>{{ end }} ",
+          "type": "text"
         },
         {
-          "background": "#1478DB",
+          "background": "#F27405",
           "foreground": "#000000",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\uE0B0",
@@ -22,7 +22,7 @@
           "type": "path"
         },
         {
-          "background": "#3AD900",
+          "background": "#A6442E",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFC600{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",

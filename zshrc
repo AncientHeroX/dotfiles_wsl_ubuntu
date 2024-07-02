@@ -1,6 +1,11 @@
 # Run tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+    # Check if inside a tmux session
+    if [ -z "$TMUX" ]; then
+      # Try to attach to an existing session, otherwise create a new one
+      tmux attach-session -t 0 || tmux new-session
+    fi
+
 fi
 # Enable colors
 autoload -U colors && colors
@@ -28,7 +33,12 @@ export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/nu
 export LIBGL_ALWAYS_INDIRECT=0
 
 # Syntax highlight manual pages
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+
+# Set LS_COLORS to use the .dircolors file
+if [ -f ~/.dircolors ]; then
+  eval "$(dircolors -b ~/.dircolors)"
+fi
 
 # CUSTOM ALIAS
 alias ls='ls -F --color=auto'
@@ -58,7 +68,7 @@ function devserv() {
 }
 # Set the PROMPT_COMMAND to call the update_ps1 function before each prompt is shown
 alias vim="nvim"
-alias windir="/mnt/c/Users/Gonzalez E/" 
+alias windir="cd '/mnt/c/Users/Gonzalez E/'" 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -68,8 +78,27 @@ function fancygit() {
     git log --graph --oneline --decorate --all
 }
 
-
 . "$HOME/.cargo/env"
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/cobalt2.omp.json)"
 source /home/eduardglez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/eduardglez/applications/gradle-8.4/bin
+export PATH=$PATH:/home/eduardglez/applications/androidsdkclt/bin
+
+export ANDROID_HOME=$HOME/android
+export PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
+# EMULATOR GOES HERE
+# PLATFORM TOOLS GO HERE
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export DISPLAY=:0
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=$PATH:~/go/bin
+export PATH=$PATH:~/apache-maven-3.9.8/bin
+export PATH=$PATH:~/.local/bin
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/cobalt2.omp.json)"
+
 
