@@ -1,3 +1,12 @@
+#! bin/bash
+
+if [ ! -d "$HOME/.dotfiles/" ]; then
+    echo "no .dotfiles"
+    exit 1
+fi
+
+$HOME/.dotfiles/mklinks
+
 # Update and Basic
 sudo apt update
 sudo apt install curl
@@ -19,18 +28,11 @@ Package: *
 Pin: origin packages.mozilla.org
 Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla 
-
 sudo apt-get update && sudo apt-get install firefox
 
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# dotfiles
-ln -s ~/.dotfiles/zshrc ~/.zshrc
-ln -s ~/.dotfiles/config/nvim ~/.config/nvim
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/poshthemes ~/.poshthemes/
 
 # zsh finish
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
@@ -44,4 +46,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\\
 nvim --headless -c 'luafile ~/.config/nvim/lua/ancientherox/packer.lua' -c 'PackerSync' -c 'qa'
 
 # Lastly
-echo "log out and back ing and add 'Hack' font to terminal"
+echo "log out and back in and add 'Hack' font to terminal"
