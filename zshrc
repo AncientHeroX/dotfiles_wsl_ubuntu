@@ -78,7 +78,6 @@ function fancygit() {
     git log --graph --oneline --decorate --all
 }
 
-. "$HOME/.cargo/env"
 source /home/eduardglez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/eduardglez/applications/gradle-8.4/bin
@@ -102,3 +101,4 @@ export PATH=$PATH:~/.local/bin
 eval "$(oh-my-posh init zsh --config ~/.poshthemes/cobalt2.omp.json)"
 
 
+source /home/eduardglez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
