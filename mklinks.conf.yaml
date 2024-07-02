@@ -8,6 +8,7 @@
      ~/.zshrc: 
      ~/.gitconfig:
      ~/.poshthemes:
+     ~/.tmux.conf:
      ~/.config/:
        glob: true
        path: ./config/*
