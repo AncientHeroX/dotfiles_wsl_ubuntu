@@ -1,4 +1,4 @@
-#! bin/bash
+#! /user/bin/env bash
 
 if [ ! -d "$HOME/.dotfiles/" ]; then
     echo "no .dotfiles"
