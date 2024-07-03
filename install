@@ -20,12 +20,13 @@ echo "installing apps ----------------------------------------------------------
 
 trap 'error_handler "error in install"' ERR
 sudo apt update
-sudo apt install -y curl git zsh bat tmux neofetch
+sudo apt install -y tilix curl git zsh bat tmux neofetch
 
 echo "changing shell ------------------------------------------------------------------------------------------------------------------------------------"
 trap 'error_handler "Could not change zsh"' ERR
 # zsh
 sudo chsh -s $(which zsh)
+zsh
 
 echo "installing Firefox ------------------------------------------------------------------------------------------------------------------------------------"
 trap 'error_handler "Could not install Firefox"' ERR
