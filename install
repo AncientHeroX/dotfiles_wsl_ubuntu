@@ -1,4 +1,4 @@
-#!/user/bin/env bash
+#!/usr/bin/env bash
 
 if [ ! -d "$HOME/.dotfiles/" ]; then
     echo "no .dotfiles"
@@ -26,7 +26,6 @@ echo "changing shell -----------------------------------------------------------
 trap 'error_handler "Could not change zsh"' ERR
 # zsh
 sudo chsh -s $(which zsh)
-zsh
 
 echo "installing Firefox ------------------------------------------------------------------------------------------------------------------------------------"
 trap 'error_handler "Could not install Firefox"' ERR
@@ -58,7 +57,6 @@ echo "Configuring zsh ----------------------------------------------------------
 trap 'error_handler "oh-my-posh config issue"' ERR
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 oh-my-posh font install Hack
-source $HOME/.zshrc
 
 echo "Configuring nvim ------------------------------------------------------------------------------------------------------------------------------------"
 # nvim setup
@@ -67,4 +65,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 nvim --headless -c 'luafile ~/.config/nvim/lua/ancientherox/packer.lua' -c 'so' -c 'PackerSync' -c 'qa'
 
 # Lastly
-echo "log out and back in and add 'Hack' font to terminal"
+zsh -c 'echo "log out and back in and add Hack font to terminal"'
