@@ -1,22 +1,35 @@
-#! /user/bin/env bash
+#!/user/bin/env bash
 
 if [ ! -d "$HOME/.dotfiles/" ]; then
     echo "no .dotfiles"
     exit 1
 fi
 
+error_handler() {
+    local msg="$1"
+    echo "Error: $msg"
+
+    exit 1
+}
+
+
+trap 'error_handler "Could not make links"' ERR
 $HOME/.dotfiles/mklinks
 
 # Update and Basic
 echo "installing apps ------------------------------------------------------------------------------------------------------------------------------------"
+
+trap 'error_handler "error in install"' ERR
 sudo apt update
 sudo apt install -y curl git zsh bat tmux neofetch
 
 echo "changing shell ------------------------------------------------------------------------------------------------------------------------------------"
+trap 'error_handler "Could not change zsh"' ERR
 # zsh
 sudo chsh -s $(which zsh)
 
 echo "installing Firefox ------------------------------------------------------------------------------------------------------------------------------------"
+trap 'error_handler "Could not install Firefox"' ERR
 # Firefox
 sudo install -d -m 0755 /etc/apt/keyrings
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
@@ -29,24 +42,29 @@ Pin-Priority: 1000
 sudo apt-get update && sudo apt-get install firefox
 
 echo "installing Homebrew------------------------------------------------------------------------------------------------------------------------------------"
+trap 'error_handler "Homebrew install failed"' ERR
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+
+trap 'error_handler "Could not install either oh-my-posh or neovim"' ERR
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+brew install neovim
+
 echo "Configuring zsh ------------------------------------------------------------------------------------------------------------------------------------"
 # zsh finish
-brew install jandedobbeleer/oh-my-posh/oh-my-posh
+trap 'error_handler "oh-my-posh config issue"' ERR
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-oh-my-posh font install
+oh-my-posh font install Hack
 source $HOME/.zshrc
 
 echo "Configuring nvim ------------------------------------------------------------------------------------------------------------------------------------"
 # nvim setup
-brew install neovim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-nvim --headless -c 'luafile ~/.config/nvim/lua/ancientherox/packer.lua' -c 'PackerSync' -c 'qa'
+trap 'error_handler "could not configure packer.nvim"' ERR
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+nvim --headless -c 'luafile ~/.config/nvim/lua/ancientherox/packer.lua' -c 'so' -c 'PackerSync' -c 'qa'
 
 # Lastly
 echo "log out and back in and add 'Hack' font to terminal"
