@@ -81,6 +81,7 @@ function fancygit() {
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/eduardglez/applications/gradle-8.4/bin
 export PATH=$PATH:/home/eduardglez/applications/androidsdkclt/bin
+export PATH=$PATH:/home/eduardglez/.keymapp
 
 export ANDROID_HOME=$HOME/android
 export PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
@@ -101,4 +102,14 @@ eval "$(oh-my-posh init zsh --config ~/.poshthemes/cobalt2.omp.json)"
 alias chTTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 export TERMINAL=tilix
 
-source /home/eduardglez/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval $(thefuck --alias)
+figlet -c EduardGlez-Deb | lolcat
+
+# bun completions
+[ -s "/home/eduardglez/.bun/_bun" ] && source "/home/eduardglez/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

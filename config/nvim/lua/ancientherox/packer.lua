@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }
-    use ({ 'rose-pine/neovim', as = 'rose-pine'}) 
+    use ({ 'rose-pine/neovim', as = 'rose-pine'})
     use ('theprimeagen/harpoon')
     use ('mbbill/undotree')
     use ('tpope/vim-fugitive')
@@ -53,4 +53,12 @@ return require('packer').startup(function(use)
             })
         end
     })
+    use ({
+        'folke/todo-comments.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    })
+    use 'ThePrimeagen/vim-be-good'
 end)
+
