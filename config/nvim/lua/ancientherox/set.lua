@@ -27,3 +27,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.o.mouse = ""
+vim.cmd([[
+let g:rustfmt_autosave = 1
+]])
