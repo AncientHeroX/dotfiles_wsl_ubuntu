@@ -21,7 +21,6 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/eduardglez/.zshrc'
 
-
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -34,11 +33,6 @@ export LIBGL_ALWAYS_INDIRECT=0
 
 # Syntax highlight manual pages
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-
-# Set LS_COLORS to use the .dircolors file
-if [ -f ~/.dircolors ]; then
-  eval "$(dircolors -b ~/.dircolors)"
-fi
 
 # CUSTOM ALIAS
 alias ls='ls -F --color=auto'
@@ -75,7 +69,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-function fancygit() {
+function gitdog() {
     git log --graph --oneline --decorate --all
 }
 
@@ -96,10 +90,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export DISPLAY=:0
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-export PATH=$PATH:~/go/bin
-export PATH=$PATH:~/apache-maven-3.9.8/bin
+export PATH=$PATH:/usr/local/apache-maven-3.9.8/bin
 export PATH=$PATH:~/.local/bin
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/cobalt2.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/tokyo.omp.json)"
 alias chTTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 export TERMINAL=tilix
 
