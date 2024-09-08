@@ -30,3 +30,4 @@ vim.o.mouse = ""
 vim.cmd([[
 let g:rustfmt_autosave = 1
 ]])
+vim.opt.guicursor=""
