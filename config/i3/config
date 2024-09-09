@@ -26,7 +26,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/.config/scripts/lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -41,9 +41,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up h
+set $up k
 set $down j
-set $left k
+set $left h
 set $right l
 
 # use Mouse+Mod4 to drag floating windows to their wanted position
@@ -54,13 +54,15 @@ floating_modifier Mod4
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod4+Return exec tilix
+bindsym Mod4+Return exec --no-startup-id tilix
 
 # kill focused window
 bindsym Mod4+q kill
 
 # start dmenu (a program launcher)
-bindsym Mod4+d exec --no-startup-id dmenu_run
+
+# --- REPLACED WITH ROFI
+# bindsym Mod4+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindsym Mod4+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -98,7 +100,8 @@ bindsym Mod4+b split h
 bindsym Mod4+v split v
 
 # enter fullscreen mode for the focused container
-bindsym Mod4+f fullscreen toggle
+# -- F11 does the same thing 
+# bindsym Mod4+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym Mod4+s layout stacking
@@ -130,7 +133,7 @@ set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
-set $ws5 "5"
+set $ws5 "5 Widgets"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -203,9 +206,14 @@ exec i3-config-wizard
 default_border pixel 1
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 gaps inner 3
+workspace 10 gaps inner 20 
 
-bindsym Mod4+n exec firefox-esr
+# Custom keybinds 
+bindsym Mod4+n exec --no-startup-id firefox-esr
 bindsym Mod4+x exec --no-startup-id $HOME/.config/scripts/lock
+bindsym Mod4+m exec "i3-msg 'workspace 10; append_layout /home/eduardglez/.config/i3/applets-workspace.json; exec --no-startup-id gnome-system-monitor; exec --no-startup-id gnome-clocks; exec --no-startup-id gnome-calendar;'"
+bindsym Mod4+d exec --no-startup-id rofi -show combi
+bindsym Mod4+f exec --no-startup-id $HOME/.local/bin/searchfiles
 
 # set primary Rosé Pine Moon colorscheme colors
 set $base           #232136
@@ -232,3 +240,7 @@ client.unfocused         $text     $base $text  $overlay   $overlay
 client.urgent            $text     $base $text  $love      $love
 client.placeholder       $base     $base $text  $overlay   $overlay
 client.background        $base
+
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/debian-linux-4k-ro.jpg
+exec_always --no-startup-id picom --experimental-backends -b --config $HOME/.config/picom/picom.conf
+exec_always --no-startup-id autotiling

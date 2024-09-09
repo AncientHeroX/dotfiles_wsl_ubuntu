@@ -1,0 +1,4 @@
+#! usr/bin/bash
+exec gnome-system-monitor;
+exec gnome-clocks;
+exec gnome-calendar;

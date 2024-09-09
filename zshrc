@@ -1,12 +1,3 @@
-# Run tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    # Check if inside a tmux session
-    if [ -z "$TMUX" ]; then
-      # Try to attach to an existing session, otherwise create a new one
-      tmux attach-session -t 0 || tmux new-session
-    fi
-
-fi
 # Enable colors
 autoload -U colors && colors
 

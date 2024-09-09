@@ -1,0 +1,116 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 1032,
+                "width": 1914,
+                "x": 3,
+                "y": 3
+            },
+            "marks": [],
+            "name": "System Monitor",
+            "percent": null,
+            "swallows": [
+                {
+                    "class": "^Gnome\\-system\\-monitor$",
+                    "instance": "^gnome\\-system\\-monitor$",
+                    "machine": "^eduard\\-deb$",
+                    "title": "^System\\ Monitor$"
+                }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "marks": [],
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "none",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                        "height": 600,
+                        "width": 768,
+                        "x": 0,
+                        "y": 0
+                    },
+                    "marks": [],
+                    "name": "Calendar",
+                    "percent": null,
+                    "swallows": [
+                        {
+                            "class": "^gnome\\-calendar$",
+                            "instance": "^gnome\\-calendar$",
+                            "machine": "^eduard\\-deb$",
+                            "title": "^Calendar$"
+                        }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "marks": [],
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "none",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                        "height": 515,
+                        "width": 956,
+                        "x": 961,
+                        "y": 520
+                    },
+                    "marks": [],
+                    "name": "New York, New York",
+                    "percent": null,
+                    "swallows": [
+                        {
+                            "class": "^org\\.gnome\\.clocks$",
+                            "instance": "^org\\.gnome\\.clocks$",
+                            "machine": "^eduard\\-deb$",
+                            "title": "^Clocks$"
+                        }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
