@@ -210,7 +210,7 @@ workspace 10 gaps inner 20
 
 # Custom keybinds 
 bindsym Mod4+n exec --no-startup-id firefox-esr
-bindsym Mod4+x exec --no-startup-id $HOME/.config/scripts/lock
+    bindsym Mod4+x exec --no-startup-id $HOME/.local/bin/powermenu.sh
 bindsym Mod4+m exec "i3-msg 'workspace 10; append_layout /home/eduardglez/.config/i3/applets-workspace.json; exec --no-startup-id gnome-system-monitor; exec --no-startup-id gnome-clocks; exec --no-startup-id gnome-calendar;'"
 bindsym Mod4+d exec --no-startup-id rofi -show combi
 bindsym Mod4+f exec --no-startup-id $HOME/.local/bin/searchfiles
