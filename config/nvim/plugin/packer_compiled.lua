@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?.lua;/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?/init.lua;/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?.lua;/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1716656478/lib/lua/5.1/?.so"
+local package_path_str = "/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?.lua;/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?/init.lua;/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?.lua;/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/eduardglez/.cache/nvim/packer_hererocks/2.1.1725453128/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -108,6 +108,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardglez/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["flash.nvim"] = {
+    config = { "\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\tjump$\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\15treesitter \0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\vremote+\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\22treesitter_search \0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\vtoggle›\3\1\0\a\0\29\0?6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0B\1\3\0016\1\2\0009\1\3\0019\1\4\1'\3\a\0'\4\6\0B\1\3\0016\1\2\0009\1\3\0019\1\4\1'\3\b\0'\4\6\0B\1\3\0016\1\2\0009\1\t\0019\1\n\0015\3\v\0'\4\6\0003\5\f\0005\6\r\0B\1\5\0016\1\2\0009\1\t\0019\1\n\0015\3\14\0'\4\15\0003\5\16\0005\6\17\0B\1\5\0016\1\2\0009\1\t\0019\1\n\1'\3\b\0'\4\18\0003\5\19\0005\6\20\0B\1\5\0016\1\2\0009\1\t\0019\1\n\0015\3\21\0'\4\22\0003\5\23\0005\6\24\0B\1\5\0016\1\2\0009\1\t\0019\1\n\1'\3\25\0'\4\26\0003\5\27\0005\6\28\0B\1\5\0012\0\0ÄK\0\1\0\1\0\1\tdesc\24Toggle Flash Search\0\n<C-s>\6c\1\0\1\tdesc\22Treesitter Search\0\6R\1\3\0\0\6o\6x\1\0\1\tdesc\17Remote Flash\0\6r\1\0\1\tdesc\21Flash Treesitter\0\6S\1\4\0\0\6n\6x\6o\1\0\1\tdesc\nFlash\0\1\4\0\0\6n\6x\6o\bset\vkeymap\6o\6x\6s\6n\20nvim_del_keymap\bapi\bvim\nflash\frequire\0" },
+    loaded = true,
+    path = "/home/eduardglez/.local/share/nvim/site/pack/packer/start/flash.nvim",
+    url = "https://github.com/folke/flash.nvim"
   },
   harpoon = {
     loaded = true,
@@ -207,6 +213,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
+-- Config for: flash.nvim
+time([[Config for flash.nvim]], true)
+try_loadstring("\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\tjump$\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\15treesitter \0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\vremote+\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\22treesitter_search \0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0¿\vtoggle›\3\1\0\a\0\29\0?6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0B\1\3\0016\1\2\0009\1\3\0019\1\4\1'\3\a\0'\4\6\0B\1\3\0016\1\2\0009\1\3\0019\1\4\1'\3\b\0'\4\6\0B\1\3\0016\1\2\0009\1\t\0019\1\n\0015\3\v\0'\4\6\0003\5\f\0005\6\r\0B\1\5\0016\1\2\0009\1\t\0019\1\n\0015\3\14\0'\4\15\0003\5\16\0005\6\17\0B\1\5\0016\1\2\0009\1\t\0019\1\n\1'\3\b\0'\4\18\0003\5\19\0005\6\20\0B\1\5\0016\1\2\0009\1\t\0019\1\n\0015\3\21\0'\4\22\0003\5\23\0005\6\24\0B\1\5\0016\1\2\0009\1\t\0019\1\n\1'\3\25\0'\4\26\0003\5\27\0005\6\28\0B\1\5\0012\0\0ÄK\0\1\0\1\0\1\tdesc\24Toggle Flash Search\0\n<C-s>\6c\1\0\1\tdesc\22Treesitter Search\0\6R\1\3\0\0\6o\6x\1\0\1\tdesc\17Remote Flash\0\6r\1\0\1\tdesc\21Flash Treesitter\0\6S\1\4\0\0\6n\6x\6o\1\0\1\tdesc\nFlash\0\1\4\0\0\6n\6x\6o\bset\vkeymap\6o\6x\6s\6n\20nvim_del_keymap\bapi\bvim\nflash\frequire\0", "config", "flash.nvim")
+time([[Config for flash.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

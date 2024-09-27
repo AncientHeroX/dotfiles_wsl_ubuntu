@@ -3,3 +3,5 @@
 	name = Eduard Gonzalez
 [init]
 	defaultBranch = main
+[alias]
+	dog = log --oneline --graph --decorate --all

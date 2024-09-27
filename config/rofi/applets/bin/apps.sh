@@ -7,11 +7,11 @@
 
 # Import Current Theme
 source "$HOME"/.config/rofi/applets/shared/theme.bash
-theme="$type/$style"
+theme="$HOME/.config/rofi/applets/type-3/style-1.rasi"
 
 # Theme Elements
 prompt='Applications'
-mesg="Installed Packages : `pacman -Q | wc -l` (pacman)"
+mesg="Installed Packages : $(dpkg -l | grep '^ii' | wc -l) (apt)"
 
 if [[ ( "$theme" == *'type-1'* ) || ( "$theme" == *'type-3'* ) || ( "$theme" == *'type-5'* ) ]]; then
 	list_col='1'
@@ -22,12 +22,12 @@ elif [[ ( "$theme" == *'type-2'* ) || ( "$theme" == *'type-4'* ) ]]; then
 fi
 
 # CMDs (add your apps here)
-term_cmd='alacritty'
-file_cmd='thunar'
+term_cmd='tilix'
+file_cmd='nemo'
 text_cmd='geany'
 web_cmd='firefox'
-music_cmd='alacritty -e ncmpcpp'
-setting_cmd='xfce4-settings-manager'
+music_cmd=''
+setting_cmd='software-properties-gtk'
 
 # Options
 layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`

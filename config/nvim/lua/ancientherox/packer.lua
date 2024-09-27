@@ -61,6 +61,7 @@ return require('packer').startup(function(use)
     })
     use 'ThePrimeagen/vim-be-good'
     use 'eandrju/cellular-automaton.nvim'
+    use 'folke/flash.nvim'
 end)
 
 

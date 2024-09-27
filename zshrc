@@ -19,7 +19,7 @@ compinit
 # End of lines added by compinstall
 
 # GUI settings
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export DISPLAY=:0
 export LIBGL_ALWAYS_INDIRECT=0
 
 # Syntax highlight manual pages
@@ -60,14 +60,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-function gitdog() {
-    git log --graph --oneline --decorate --all
-}
-
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/eduardglez/applications/gradle-8.4/bin
 export PATH=$PATH:/home/eduardglez/applications/androidsdkclt/bin
 export PATH=$PATH:/home/eduardglez/.keymapp
+export PATH=$PATH:/usr/local/apache-maven-3.9.8/bin
+export PATH=$PATH:~/.local/bin
+export PATH="$PATH:$BUN_INSTALL/bin"
+export PATH=$PATH:/usr/local/pgsql/bin
 
 export ANDROID_HOME=$HOME/android
 export PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
@@ -78,23 +78,32 @@ export PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export DISPLAY=:0
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-export PATH=$PATH:/usr/local/apache-maven-3.9.8/bin
-export PATH=$PATH:~/.local/bin
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/tokyo.omp.json)"
-alias chTTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
+export EDITOR="nvim"
 export TERMINAL=tilix
 
+export REDIS_JSON_SO=/home/eduardglez/Downloads/RedisJSON/target/release/librejson.so
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/tokyo.omp.json)"
+alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
+
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 eval $(thefuck --alias)
-figlet -c EduardGlez-Deb | lolcat
+figlet -c $USER"_deb_"| lolcat
 
 # bun completions
 [ -s "/home/eduardglez/.bun/_bun" ] && source "/home/eduardglez/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
