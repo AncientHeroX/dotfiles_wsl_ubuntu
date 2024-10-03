@@ -91,7 +91,6 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
-eval $(thefuck --alias)
 figlet -c $USER"_deb_"| lolcat
 
 # bun completions

@@ -110,7 +110,6 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["flash.nvim"] = {
-    config = { "\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\tjump$\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\15treesitter \0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\vremote+\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\22treesitter_search \0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\vtoggleÝ\3\1\0\a\0\29\0?6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0B\1\3\0016\1\2\0009\1\3\0019\1\4\1'\3\a\0'\4\6\0B\1\3\0016\1\2\0009\1\3\0019\1\4\1'\3\b\0'\4\6\0B\1\3\0016\1\2\0009\1\t\0019\1\n\0015\3\v\0'\4\6\0003\5\f\0005\6\r\0B\1\5\0016\1\2\0009\1\t\0019\1\n\0015\3\14\0'\4\15\0003\5\16\0005\6\17\0B\1\5\0016\1\2\0009\1\t\0019\1\n\1'\3\b\0'\4\18\0003\5\19\0005\6\20\0B\1\5\0016\1\2\0009\1\t\0019\1\n\0015\3\21\0'\4\22\0003\5\23\0005\6\24\0B\1\5\0016\1\2\0009\1\t\0019\1\n\1'\3\25\0'\4\26\0003\5\27\0005\6\28\0B\1\5\0012\0\0€K\0\1\0\1\0\1\tdesc\24Toggle Flash Search\0\n<C-s>\6c\1\0\1\tdesc\22Treesitter Search\0\6R\1\3\0\0\6o\6x\1\0\1\tdesc\17Remote Flash\0\6r\1\0\1\tdesc\21Flash Treesitter\0\6S\1\4\0\0\6n\6x\6o\1\0\1\tdesc\nFlash\0\1\4\0\0\6n\6x\6o\bset\vkeymap\6o\6x\6s\6n\20nvim_del_keymap\bapi\bvim\nflash\frequire\0" },
     loaded = true,
     path = "/home/eduardglez/.local/share/nvim/site/pack/packer/start/flash.nvim",
     url = "https://github.com/folke/flash.nvim"
@@ -119,6 +118,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardglez/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["hlchunk.nvim"] = {
+    config = { "\27LJ\2\n\5\0\0\f\0\24\1)6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0004\4\3\0005\5\4\0>\5\1\0045\5\5\0>\5\2\4=\4\6\0035\4\a\0=\4\b\3=\3\n\0025\3\v\0004\4\3\0006\5\f\0009\5\r\0059\5\14\0056\a\f\0009\a\r\a9\a\15\a6\t\f\0009\t\r\t9\t\16\t'\v\17\0B\t\2\0A\a\0\2'\b\18\0'\t\19\0B\5\4\0?\5\0\0=\4\6\0035\4\20\0=\4\b\3=\3\21\0025\3\22\0=\3\23\2B\0\2\1K\0\1\0\rline_num\1\0\2\nstyle\f#ac92d1\venable\2\vindent\1\5\0\0\bâ”‚\aÂ¦\bâ”†\bâ”Š\bgui\afg\15Whitespace\thlID\15synIDtrans\14synIDattr\afn\bvim\1\0\a\19use_treesitter\2\venable\2\nchars\0\ndelay\3d\nstyle\0\16ahead_lines\3\5\rpriority\3\n\nchunk\1\0\3\vindent\0\rline_num\0\nchunk\0\nchars\1\0\5\16right_arrow\6>\16left_bottom\bâ•°\rleft_top\bâ•­\18vertical_line\bâ”‚\20horizontal_line\bâ”€\nstyle\1\0\1\afg\f#c21f30\1\0\1\afg\f#ac92d1\1\0\n\19use_treesitter\2\venable\2\nchars\0\ndelay\3\0\nstyle\0\15textobject\5\rpriority\3\15\15error_sign\2\18max_file_size\3€€@\rduration\3d\nsetup\fhlchunk\frequire\3€€À™\4\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/eduardglez/.local/share/nvim/site/pack/packer/opt/hlchunk.nvim",
+    url = "https://github.com/shellRaining/hlchunk.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -213,10 +220,14 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
--- Config for: flash.nvim
-time([[Config for flash.nvim]], true)
-try_loadstring("\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\tjump$\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\15treesitter \0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\vremote+\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\22treesitter_search \0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\vtoggleÝ\3\1\0\a\0\29\0?6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0B\1\3\0016\1\2\0009\1\3\0019\1\4\1'\3\a\0'\4\6\0B\1\3\0016\1\2\0009\1\3\0019\1\4\1'\3\b\0'\4\6\0B\1\3\0016\1\2\0009\1\t\0019\1\n\0015\3\v\0'\4\6\0003\5\f\0005\6\r\0B\1\5\0016\1\2\0009\1\t\0019\1\n\0015\3\14\0'\4\15\0003\5\16\0005\6\17\0B\1\5\0016\1\2\0009\1\t\0019\1\n\1'\3\b\0'\4\18\0003\5\19\0005\6\20\0B\1\5\0016\1\2\0009\1\t\0019\1\n\0015\3\21\0'\4\22\0003\5\23\0005\6\24\0B\1\5\0016\1\2\0009\1\t\0019\1\n\1'\3\25\0'\4\26\0003\5\27\0005\6\28\0B\1\5\0012\0\0€K\0\1\0\1\0\1\tdesc\24Toggle Flash Search\0\n<C-s>\6c\1\0\1\tdesc\22Treesitter Search\0\6R\1\3\0\0\6o\6x\1\0\1\tdesc\17Remote Flash\0\6r\1\0\1\tdesc\21Flash Treesitter\0\6S\1\4\0\0\6n\6x\6o\1\0\1\tdesc\nFlash\0\1\4\0\0\6n\6x\6o\bset\vkeymap\6o\6x\6s\6n\20nvim_del_keymap\bapi\bvim\nflash\frequire\0", "config", "flash.nvim")
-time([[Config for flash.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'hlchunk.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'hlchunk.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -62,6 +62,56 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/vim-be-good'
     use 'eandrju/cellular-automaton.nvim'
     use 'folke/flash.nvim'
+    use ({
+        'shellRaining/hlchunk.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
+        config = function ()
+            require('hlchunk').setup({
+                chunk = {
+                    enable = true,
+                    priority = 15,
+                    style = {
+                        { fg = "#ac92d1" },
+                        { fg = "#c21f30" },
+                    },
+                    use_treesitter = true,
+                    chars = {
+                        horizontal_line = "─",
+                        vertical_line = "│",
+                        left_top = "╭",
+                        left_bottom = "╰",
+                        right_arrow = ">",
+                    },
+                    textobject = "",
+                    max_file_size = 1024 * 1024,
+                    error_sign = true,
+                    -- animation related
+                    duration = 100,
+                    delay = 0,
+                },
+                indent = {
+                    enable = true,
+                    priority = 10,
+                    style = {
+                        vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"),
+                    },
+                    use_treesitter = true,
+                    chars = {
+                        "│",
+                        "¦",
+                        "┆",
+                        "┊",
+                    },
+                    ahead_lines = 5,
+                    delay = 100,
+                },
+                line_num = {
+                    enable = true,
+                    style = "#ac92d1",
+                }
+            })
+        end
+    })
 end)
 
 

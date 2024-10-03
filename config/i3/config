@@ -213,7 +213,6 @@ bindsym Mod4+n exec --no-startup-id firefox-esr
 bindsym Mod4+x exec --no-startup-id $HOME/.local/bin/powermenu.sh
 bindsym Mod4+m exec "i3-msg 'workspace 10; append_layout /home/eduardglez/.config/i3/applets-workspace.json; exec --no-startup-id gnome-system-monitor; exec --no-startup-id gnome-clocks; exec --no-startup-id gnome-calendar;'"
 bindsym Mod4+d exec --no-startup-id $HOME/.config/rofi/launchers/type-2/launcher.sh
-bindsym Mod4+f exec --no-startup-id $HOME/.local/bin/searchfiles
 
 # set primary Rosé Pine Moon colorscheme colors
 set $base           #232136
@@ -244,5 +243,3 @@ client.background        $base
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/debian-linux-4k-ro.jpg
 exec_always --no-startup-id picom --experimental-backends -b --config $HOME/.config/picom/picom.conf -f --fade-delta=2
 exec_always --no-startup-id autotiling
-set $subtle         #908caa
-set $love           #eb6f92
