@@ -30,7 +30,7 @@ alias ls='ls -F --color=auto'
 alias ll='ls -AlFh'
 alias la='ls -A'
 alias l='ls -CF'
-alias bat='batcat --theme="Rose_Pine"'
+alias bat='batcat --theme="Rose_Pine" --style="plain"'
 
 # cd but in the windows dir
 function cdwin() {
@@ -88,13 +88,12 @@ eval "$(oh-my-posh init zsh --config ~/.poshthemes/tokyo.omp.json)"
 alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
 figlet -c $USER"_deb_"| lolcat
 
-# bun completions
-[ -s "/home/eduardglez/.bun/_bun" ] && source "/home/eduardglez/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
