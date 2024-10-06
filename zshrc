@@ -84,7 +84,7 @@ export TERMINAL=tilix
 export REDIS_JSON_SO=/home/eduardglez/Downloads/RedisJSON/target/release/librejson.so
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/tokyo.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/rose_pine.omp.json)"
 alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
