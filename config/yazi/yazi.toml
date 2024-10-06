@@ -81,7 +81,8 @@ suppress_preload = false
 
 [plugin]
 append_previewers = [
-  { name = "*", run = "hexyl" },
+  #{ name = "*", run = "hexyl" },
+  { name = "*", run = "bat" }
 ]
 
 fetchers = [
@@ -103,8 +104,8 @@ preloaders = [
 previewers = [
 	{ name = "*/", run = "folder", sync = true },
 	# Code
-	{ mime = "text/*", run = "code" },
-	{ mime = "*/{xml,javascript,x-wine-extension-ini}", run = "code" },
+	{ mime = "text/*", run = "bat" },
+	{ mime = "*/{xml,javascript,x-wine-extension-ini}", run = "bat" },
 	# JSON
 	{ mime = "application/{json,x-ndjson}", run = "json" },
 	# Image

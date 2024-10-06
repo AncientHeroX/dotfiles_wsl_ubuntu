@@ -14,6 +14,7 @@ error_handler() {
 
 trap 'error_handler "Could not make links"' ERR
 $HOME/.dotfiles/mklinks
+bat cache --build
 
 # Update and Basic
 echo "installing apps ------------------------------------------------------------------------------------------------------------------------------------"

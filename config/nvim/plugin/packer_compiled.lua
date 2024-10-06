@@ -120,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/theprimeagen/harpoon"
   },
   ["hlchunk.nvim"] = {
-    config = { "\27LJ\2\n\5\0\0\f\0\24\1)6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0004\4\3\0005\5\4\0>\5\1\0045\5\5\0>\5\2\4=\4\6\0035\4\a\0=\4\b\3=\3\n\0025\3\v\0004\4\3\0006\5\f\0009\5\r\0059\5\14\0056\a\f\0009\a\r\a9\a\15\a6\t\f\0009\t\r\t9\t\16\t'\v\17\0B\t\2\0A\a\0\2'\b\18\0'\t\19\0B\5\4\0?\5\0\0=\4\6\0035\4\20\0=\4\b\3=\3\21\0025\3\22\0=\3\23\2B\0\2\1K\0\1\0\rline_num\1\0\2\nstyle\f#ac92d1\venable\2\vindent\1\5\0\0\bâ”‚\aÂ¦\bâ”†\bâ”Š\bgui\afg\15Whitespace\thlID\15synIDtrans\14synIDattr\afn\bvim\1\0\a\19use_treesitter\2\venable\2\nchars\0\ndelay\3d\nstyle\0\16ahead_lines\3\5\rpriority\3\n\nchunk\1\0\3\vindent\0\rline_num\0\nchunk\0\nchars\1\0\5\16right_arrow\6>\16left_bottom\bâ•°\rleft_top\bâ•­\18vertical_line\bâ”‚\20horizontal_line\bâ”€\nstyle\1\0\1\afg\f#c21f30\1\0\1\afg\f#ac92d1\1\0\n\19use_treesitter\2\venable\2\nchars\0\ndelay\3\0\nstyle\0\15textobject\5\rpriority\3\15\15error_sign\2\18max_file_size\3€€@\rduration\3d\nsetup\fhlchunk\frequire\3€€À™\4\0" },
+    config = { "\27LJ\2\n™\4\0\0\6\0\17\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0004\4\3\0005\5\4\0>\5\1\0045\5\5\0>\5\2\4=\4\6\0035\4\a\0=\4\b\3=\3\n\0025\3\v\0005\4\f\0=\4\b\0035\4\r\0=\4\6\3=\3\14\0025\3\15\0=\3\16\2B\0\2\1K\0\1\0\rline_num\1\0\2\nstyle\f#ac92d1\venable\2\vindent\1\2\0\0\f#6e6a86\1\2\0\0\bâ”‚\1\0\a\ndelay\3d\venable\2\16ahead_lines\3\5\19use_treesitter\2\nchars\0\rpriority\3\n\nstyle\0\nchunk\1\0\3\rline_num\0\nchunk\0\vindent\0\nchars\1\0\5\20horizontal_line\bâ”€\16right_arrow\6>\16left_bottom\bâ•°\rleft_top\bâ•­\18vertical_line\bâ”‚\nstyle\1\0\1\afg\f#c21f30\1\0\1\afg\f#ac92d1\1\0\n\18max_file_size\3€€@\15error_sign\2\nchars\0\nstyle\0\19use_treesitter\2\15textobject\aic\rpriority\3\15\rduration\3d\ndelay\3\0\venable\2\nsetup\fhlchunk\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -224,8 +224,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'hlchunk.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'hlchunk.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'hlchunk.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

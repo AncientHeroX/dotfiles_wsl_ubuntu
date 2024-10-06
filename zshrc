@@ -30,7 +30,7 @@ alias ls='ls -F --color=auto'
 alias ll='ls -AlFh'
 alias la='ls -A'
 alias l='ls -CF'
-alias bat='batcat'
+alias bat='batcat --theme="Rose_Pine"'
 
 # cd but in the windows dir
 function cdwin() {
@@ -106,3 +106,5 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+eval "$(zoxide init zsh)"
+alias cd="z"

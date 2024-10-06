@@ -82,7 +82,7 @@ return require('packer').startup(function(use)
                         left_bottom = "╰",
                         right_arrow = ">",
                     },
-                    textobject = "",
+                    textobject = "ic",
                     max_file_size = 1024 * 1024,
                     error_sign = true,
                     -- animation related
@@ -92,23 +92,20 @@ return require('packer').startup(function(use)
                 indent = {
                     enable = true,
                     priority = 10,
-                    style = {
-                        vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"),
-                    },
-                    use_treesitter = true,
                     chars = {
                         "│",
-                        "¦",
-                        "┆",
-                        "┊",
                     },
+                    style = {
+                        "#6e6a86",
+                    },
+                    use_treesitter = true,
                     ahead_lines = 5,
                     delay = 100,
                 },
                 line_num = {
                     enable = true,
                     style = "#ac92d1",
-                }
+                },
             })
         end
     })
