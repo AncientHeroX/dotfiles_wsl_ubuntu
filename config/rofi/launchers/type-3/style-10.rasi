@@ -33,9 +33,9 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               10px;
     border-color:                @selected;
-    background-color:            @background;
+    background-image:            url("~/Pictures/stunning-purple-landscape-sohovibes.jpg", width);
     cursor:                      "default";
 }
 
@@ -124,7 +124,7 @@ element {
     margin:                      0px;
     padding:                     15px 10px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               5px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -132,14 +132,11 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            transparent;
     text-color:                  @foreground;
 }
 element selected.normal {
     border:                      0px 0px 0px 4px;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background-alt;
+    border-radius:               5px;
     text-color:                  @foreground;
 }
 element-icon {

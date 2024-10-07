@@ -79,7 +79,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export EDITOR="nvim"
-export TERMINAL=tilix
+export TERMINAL=wezterm
 
 export REDIS_JSON_SO=/home/eduardglez/Downloads/RedisJSON/target/release/librejson.so
 
@@ -89,6 +89,7 @@ alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^ ' autosuggest-accept
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 

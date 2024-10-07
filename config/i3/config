@@ -54,14 +54,13 @@ floating_modifier Mod4
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod4+Return exec --no-startup-id tilix
+bindsym Mod4+Return exec --no-startup-id wezterm
 
 # kill focused window
 bindsym Mod4+q kill
 
 # start dmenu (a program launcher)
-
-# --- REPLACED WITH ROFI
+# --- REPLACED WITH ROFI -- 
 # bindsym Mod4+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindsym Mod4+d exec "rofi -modi drun,run -show drun"
@@ -207,12 +206,13 @@ default_border pixel 1
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 gaps inner 3
 workspace 10 gaps inner 20 
+for_window [class=".*"] border pixel 1
 
 # Custom keybinds 
 bindsym Mod4+n exec --no-startup-id firefox-esr
 bindsym Mod4+x exec --no-startup-id $HOME/.local/bin/powermenu.sh
 bindsym Mod4+m exec "i3-msg 'workspace 10; append_layout /home/eduardglez/.config/i3/applets-workspace.json; exec --no-startup-id gnome-system-monitor; exec --no-startup-id gnome-clocks; exec --no-startup-id gnome-calendar;'"
-bindsym Mod4+d exec --no-startup-id $HOME/.config/rofi/launchers/type-2/launcher.sh
+bindsym Mod4+d exec --no-startup-id $HOME/.config/rofi/launchers/type-3/launcher.sh
 
 # set primary Rosé Pine Moon colorscheme colors
 set $base           #232136
@@ -233,7 +233,7 @@ set $highlighthigh  #56526e
 
 # Teming border and Windows --------------
 # target                 title     bg    text   indicator  border
-client.focused           $rose     $base $text  $rose      $rose
+client.focused           $rose     $base $text  $rose      $pine
 client.focused_inactive  $text     $base $text  $subtle    $surface
 client.unfocused         $text     $base $text  $overlay   $overlay
 client.urgent            $text     $base $text  $love      $love
@@ -243,3 +243,4 @@ client.background        $base
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/0060_soho_vibes.jpg
 exec_always --no-startup-id picom --experimental-backends -b --config $HOME/.config/picom/picom.conf -f --fade-delta=2
 exec_always --no-startup-id autotiling
+

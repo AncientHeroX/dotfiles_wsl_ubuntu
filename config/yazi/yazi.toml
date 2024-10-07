@@ -81,7 +81,7 @@ suppress_preload = false
 
 [plugin]
 append_previewers = [
-  #{ name = "*", run = "hexyl" },
+  { name = "*", run = "hexyl" },
   { name = "*", run = "bat" }
 ]
 

@@ -9,6 +9,7 @@
      ~/.gitconfig:
      ~/.poshthemes:
      ~/.tmux.conf:
+     ~/.wezterm.lua:
      ~/.config/:
        glob: true
        path: ./config/*
