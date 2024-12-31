@@ -340,3 +340,8 @@ run = "plugin --sync parent-arrow --args=-1"
 [[manager.prepend_keymap]]
 on  = "]"
 run = "plugin --sync parent-arrow --args=1"
+
+[[manager.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"

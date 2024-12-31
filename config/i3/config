@@ -54,7 +54,7 @@ floating_modifier Mod4
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod4+Return exec --no-startup-id wezterm
+bindsym Mod4+Return exec --no-startup-id optirun wezterm
 
 # kill focused window
 bindsym Mod4+q kill
@@ -103,8 +103,8 @@ bindsym Mod4+v split v
 # bindsym Mod4+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod4+s layout stacking
-bindsym Mod4+w layout tabbed
+# bindsym Mod4+s layout stacking
+# bindsym Mod4+w layout tabbed
 bindsym Mod4+e layout toggle split
 
 # toggle tiling / floating
@@ -201,17 +201,17 @@ bindsym Mod4+r mode "resize"
 # finds out, if available)
 
 
-exec i3-config-wizard
+exec --no-startup-id i3-config-wizard
 default_border pixel 1
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-gaps inner 3
+gaps inner 5
 workspace 10 gaps inner 20 
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 # Custom keybinds 
 bindsym Mod4+n exec --no-startup-id firefox-esr
 bindsym Mod4+x exec --no-startup-id $HOME/.local/bin/powermenu.sh
-bindsym Mod4+m exec "i3-msg 'workspace 10; append_layout /home/eduardglez/.config/i3/applets-workspace.json; exec --no-startup-id gnome-system-monitor; exec --no-startup-id gnome-clocks; exec --no-startup-id gnome-calendar;'"
+bindsym Mod4+m exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/eduardglez/.config/i3/applets-workspace.json; exec --no-startup-id gnome-system-monitor; exec --no-startup-id gnome-clocks; exec --no-startup-id gnome-calendar;'"
 bindsym Mod4+d exec --no-startup-id $HOME/.config/rofi/launchers/type-3/launcher.sh
 
 # set primary Rosé Pine Moon colorscheme colors
@@ -240,7 +240,6 @@ client.urgent            $text     $base $text  $love      $love
 client.placeholder       $base     $base $text  $overlay   $overlay
 client.background        $base
 
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/0060_soho_vibes.jpg
-exec_always --no-startup-id picom --experimental-backends -b --config $HOME/.config/picom/picom.conf -f --fade-delta=2
+exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/background/0060_soho_vibes.jpg
+exec_always --no-startup-id picom
 exec_always --no-startup-id autotiling
-

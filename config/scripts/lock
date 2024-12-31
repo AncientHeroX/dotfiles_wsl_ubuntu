@@ -1,16 +1,16 @@
 #!/bin/sh
 
-alpha='dd'
+alpha='A0'
 background='#282a36'
 selection='#44475a'
 comment='#6272a4'
 
-yellow='#f1fa8c'
-orange='#ffb86c'
-red='#ff5555'
-magenta='#ff79c6'
-blue='#6272a4'
-cyan='#8be9fd'
+yellow='#f6c177'
+orange='#ea9a97'
+red='#eb6f92'
+magenta='#c4a7e7'
+blue='#3e8fb0'
+cyan='#9ccfd8'
 green='50fa7b'
 
 i3lock \
@@ -33,7 +33,7 @@ i3lock \
   --date-color=$blue \
   --time-color=$blue \
   --screen 1 \
-  --blur 1 \
+  --blur 10 \
   --clock \
   --indicator \
   --time-str="%H:%M:%S" \

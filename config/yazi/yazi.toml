@@ -48,15 +48,23 @@ play = [
 	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
+run_script = [
+    { run = 'bash "$1"', desc = "Run Shell Script", block = true, for = "linux" },
+]
+edit_image = [
+    { run = 'gimp "$1"', desc = "Edit the image", block = true, for = "linux" },
+]
 
 [open]
 rules = [
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+    # Shell 
+	{ mime = "text/x-shellscript", use = [ "run_script", "edit", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "image/*", use = [ "open", "edit_image", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Archive
@@ -68,7 +76,7 @@ rules = [
 	# Empty file
 	{ mime = "inode/x-empty", use = [ "edit", "reveal" ] },
 	# Fallback
-	{ name = "*", use = [ "edit", "reveal" ] },
+	{ name = "*", use = [ "open", "edit", "reveal" ] },
 ]
 
 [tasks]

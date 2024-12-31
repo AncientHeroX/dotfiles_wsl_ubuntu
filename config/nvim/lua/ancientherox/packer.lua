@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
         {'neovim/nvim-lspconfig'},             -- Required
         {'williamboman/mason.nvim'},           -- Optional
         {'williamboman/mason-lspconfig.nvim'}, -- Optional
+        {'WhoIsSethDaniel/mason-tool-installer.nvim'},
 
         -- Autocompletion
 
@@ -74,7 +75,7 @@ return require('packer').startup(function(use)
                         { fg = "#ac92d1" },
                         { fg = "#c21f30" },
                     },
-                    use_treesitter = true,
+                    use_treesitter = false,
                     chars = {
                         horizontal_line = "─",
                         vertical_line = "│",
@@ -109,7 +110,19 @@ return require('packer').startup(function(use)
             })
         end
     })
+    use ({
+        'sontungexpt/better-diagnostic-virtual-text',
+        config = function (_)
+            require('better-diagnostic-virtual-text').setup()
+        end
+    })
+    use 'mfussenegger/nvim-jdtls'
+    use 'tikhomirov/vim-glsl'
+    use {
+        "aznhe21/actions-preview.nvim",
+        config = function()
+            vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+        end,
+    }
 end)
-
-
 

@@ -3,8 +3,10 @@ autoload -U colors && colors
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt SHARE_HISTORY
 setopt autocd nomatch
 unsetopt beep
 bindkey -v
@@ -12,14 +14,9 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/eduardglez/.zshrc'
 
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-# End of lines added by compinstall
 
 # GUI settings
-export DISPLAY=:0
+export DISPLAY=:1
 export LIBGL_ALWAYS_INDIRECT=0
 
 # Syntax highlight manual pages
@@ -55,6 +52,8 @@ function devserv() {
 # Set the PROMPT_COMMAND to call the update_ps1 function before each prompt is shown
 alias vim="nvim"
 alias windir="cd '/mnt/c/Users/Gonzalez E/'" 
+alias cx="z $BASE || z"
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -65,8 +64,9 @@ export PATH=$PATH:/home/eduardglez/applications/gradle-8.4/bin
 export PATH=$PATH:/home/eduardglez/applications/androidsdkclt/bin
 export PATH=$PATH:/home/eduardglez/.keymapp
 export PATH=$PATH:/usr/local/apache-maven-3.9.8/bin
-export PATH=$PATH:~/.local/bin
-export PATH="$PATH:$BUN_INSTALL/bin"
+export PATH=$PATH:/home/eduardglez/.zig
+export PATH=$PATH:/home/eduardglez/.local/bin
+export PATH=$PATH:$BUN_INSTALL/bin
 export PATH=$PATH:/usr/local/pgsql/bin
 
 export ANDROID_HOME=$HOME/android
@@ -87,14 +87,22 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config ~/.poshthemes/rose_pine.omp.json)"
 alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^ ' autosuggest-accept
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
-figlet -c $USER"_deb_"| lolcat
+# ZSH AUTOCOMPLETE
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=true
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^f' autosuggest-accept
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+# End of lines added by compinstall
 
+
+figlet -c $USER"_deb_" | lolcat 
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -108,3 +116,4 @@ function y() {
 }
 eval "$(zoxide init zsh)"
 alias cd="z"
+alias makehome="alias cx='z $(pwd) || z'"

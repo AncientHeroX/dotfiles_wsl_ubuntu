@@ -18,11 +18,20 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- New Blank Line
+vim.keymap.set("n", "<leader>o", "o<esc>0d$");
+vim.keymap.set("n", "<leader>O", "O<esc>0d$");
+
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+
+-- Source File
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+
+-- Code actions
+vim.api.nvim_set_keymap('n', '<leader>k', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>K', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 
 local flash = require('flash')
 -- Keybindings for Flash
@@ -31,3 +40,4 @@ vim.keymap.set({ 'n', 'x', 'o' }, 'S', function() flash.treesitter() end, { desc
 vim.keymap.set('o', 'r', function() flash.remote() end, { desc = "Remote Flash" })
 vim.keymap.set({ 'o', 'x' }, 'R', function() flash.treesitter_search() end, { desc = "Treesitter Search" })
 vim.keymap.set('c', '<C-s>', function() flash.toggle() end, { desc = "Toggle Flash Search" })
+

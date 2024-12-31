@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "Reledia/hexyl", rev = "f845ea5" }]
+deps = [{ use = "Reledia/hexyl", rev = "f845ea5" }, { use = "yazi-rs/plugins:chmod", rev = "7afba3a" }]
 
 [flavor]
 deps = []
