@@ -23,10 +23,11 @@ export LIBGL_ALWAYS_INDIRECT=0
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # CUSTOM ALIAS
-alias ls='ls -F --color=auto'
-alias ll='ls -AlFh'
+alias ls='eza'
+alias ll='ls -AlhF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lt="eza -lT --hyperlink --icons=always --level=3"
 alias bat='batcat --theme="Rose_Pine" --style="plain"'
 
 # cd but in the windows dir
@@ -92,6 +93,7 @@ source /usr/share/doc/fzf/examples/completion.zsh
 
 # ZSH AUTOCOMPLETE
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=true
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^f' autosuggest-accept

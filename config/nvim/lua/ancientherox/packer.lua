@@ -2,47 +2,47 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
+    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
-     use {
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
         end,
     }
-    use ({ 'rose-pine/neovim', as = 'rose-pine'})
-    use ('theprimeagen/harpoon')
-    use ('mbbill/undotree')
-    use ('tpope/vim-fugitive')
-    use ("nvim-treesitter/nvim-treesitter-context");
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use('theprimeagen/harpoon')
+    use('mbbill/undotree')
+    use('tpope/vim-fugitive')
+    use("nvim-treesitter/nvim-treesitter-context");
 
     use {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v2.x',
-      requires = {
-        -- LSP Support
-        {'neovim/nvim-lspconfig'},             -- Required
-        {'williamboman/mason.nvim'},           -- Optional
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
-        {'WhoIsSethDaniel/mason-tool-installer.nvim'},
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+            { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
 
-        -- Autocompletion
+            -- Autocompletion
 
-        {'hrsh7th/nvim-cmp'},
-        {'hrsh7th/cmp-buffer'},
-        {'hrsh7th/cmp-path'},
-        {'saadparwaiz1/cmp_luasnip'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'hrsh7th/cmp-nvim-lua'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
-        {'L3MON4D3/LuaSnip'},     -- Required
-      }
+            { 'L3MON4D3/LuaSnip' }, -- Required
+        }
     }
     use 'sbdchd/neoformat'
     use({
@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
             })
         end
     })
-    use ({
+    use({
         'folke/todo-comments.nvim',
         requires = {
             'nvim-lua/plenary.nvim'
@@ -63,10 +63,10 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/vim-be-good'
     use 'eandrju/cellular-automaton.nvim'
     use 'folke/flash.nvim'
-    use ({
+    use({
         'shellRaining/hlchunk.nvim',
         event = { 'BufReadPre', 'BufNewFile' },
-        config = function ()
+        config = function()
             require('hlchunk').setup({
                 chunk = {
                     enable = true,
@@ -110,9 +110,9 @@ return require('packer').startup(function(use)
             })
         end
     })
-    use ({
+    use({
         'sontungexpt/better-diagnostic-virtual-text',
-        config = function (_)
+        config = function(_)
             require('better-diagnostic-virtual-text').setup()
         end
     })
@@ -124,5 +124,8 @@ return require('packer').startup(function(use)
             vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
         end,
     }
+    use {
+        'stevearc/conform.nvim',
+        event = { "BufReadPre", "BufWritePre" }
+    }
 end)
-
