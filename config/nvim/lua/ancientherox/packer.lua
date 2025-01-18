@@ -1,4 +1,4 @@
--- Only required if you have packer configured as `opt`
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -126,6 +126,6 @@ return require('packer').startup(function(use)
     }
     use {
         'stevearc/conform.nvim',
-        event = { "BufReadPre", "BufWritePre" }
     }
+    use 'mfussenegger/nvim-dap'
 end)

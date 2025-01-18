@@ -14,6 +14,8 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/eduardglez/.zshrc'
 
+# Segfault Core dumps
+ulimit -c unlimited
 
 # GUI settings
 export DISPLAY=:1
@@ -23,12 +25,16 @@ export LIBGL_ALWAYS_INDIRECT=0
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # CUSTOM ALIAS
-alias ls='eza'
-alias ll='ls -AlhF'
+alias ls='eza --classify=always' 
+alias ll='ls -Alh'
 alias la='ls -A'
 alias l='ls -CF'
 alias lt="eza -lT --hyperlink --icons=always --level=3"
 alias bat='batcat --theme="Rose_Pine" --style="plain"'
+alias cd="z"
+alias makehome="alias cx='z $(pwd) || z'"
+alias rm='_remove'
+alias tp="trash-put"
 
 # cd but in the windows dir
 function cdwin() {
@@ -61,14 +67,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/apache-maven-3.9.8/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/usr/local/pgsql/bin
 export PATH=$PATH:/home/eduardglez/applications/gradle-8.4/bin
 export PATH=$PATH:/home/eduardglez/applications/androidsdkclt/bin
 export PATH=$PATH:/home/eduardglez/.keymapp
-export PATH=$PATH:/usr/local/apache-maven-3.9.8/bin
 export PATH=$PATH:/home/eduardglez/.zig
 export PATH=$PATH:/home/eduardglez/.local/bin
 export PATH=$PATH:$BUN_INSTALL/bin
-export PATH=$PATH:/usr/local/pgsql/bin
 
 export ANDROID_HOME=$HOME/android
 export PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
@@ -101,8 +108,8 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
+setopt completealiases
 # End of lines added by compinstall
-
 
 figlet -c $USER"_deb_" | lolcat 
 
@@ -114,8 +121,6 @@ function y() {
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
 	fi
-	rm -f -- "$tmp"
+	command rm -f -- "$tmp"
 }
 eval "$(zoxide init zsh)"
-alias cd="z"
-alias makehome="alias cx='z $(pwd) || z'"
