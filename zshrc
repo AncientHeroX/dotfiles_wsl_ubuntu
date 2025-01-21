@@ -18,7 +18,7 @@ zstyle :compinstall filename '/home/eduardglez/.zshrc'
 ulimit -c unlimited
 
 # GUI settings
-export DISPLAY=:1
+export DISPLAY=:0
 export LIBGL_ALWAYS_INDIRECT=0
 
 # Syntax highlight manual pages
@@ -66,7 +66,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/apache-maven-3.9.8/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/pgsql/bin
@@ -75,7 +74,8 @@ export PATH=$PATH:/home/eduardglez/applications/androidsdkclt/bin
 export PATH=$PATH:/home/eduardglez/.keymapp
 export PATH=$PATH:/home/eduardglez/.zig
 export PATH=$PATH:/home/eduardglez/.local/bin
-export PATH=$PATH:$BUN_INSTALL/bin
+export PATH=$PATH:/home/eduardglez/.local/go/bin
+# export PATH=$PATH:$BUN_INSTALL/bin
 
 export ANDROID_HOME=$HOME/android
 export PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
@@ -91,7 +91,6 @@ export TERMINAL=wezterm
 
 export REDIS_JSON_SO=/home/eduardglez/Downloads/RedisJSON/target/release/librejson.so
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config ~/.poshthemes/rose_pine.omp.json)"
 alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 
@@ -124,3 +123,4 @@ function y() {
 	command rm -f -- "$tmp"
 }
 eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
