@@ -128,4 +128,12 @@ return require('packer').startup(function(use)
         'stevearc/conform.nvim',
     }
     use 'mfussenegger/nvim-dap'
+    use {
+        'rcarriga/nvim-dap-ui',
+        config = function()
+            require('dapui').setup()
+        end,
+        requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
+    }
+    use 'theHamsta/nvim-dap-virtual-text'
 end)

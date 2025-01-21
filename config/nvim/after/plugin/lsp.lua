@@ -1,6 +1,6 @@
 local lsp = require("lsp-zero")
 
-lsp.preset("recommended")
+lsp.preset("minimal")
 
 lsp.ensure_installed({
   'rust_analyzer',

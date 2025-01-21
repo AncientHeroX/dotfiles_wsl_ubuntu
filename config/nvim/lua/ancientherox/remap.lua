@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- Source File
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
 
 -- Code actions
@@ -41,3 +41,7 @@ vim.keymap.set('o', 'r', function() flash.remote() end, { desc = "Remote Flash" 
 vim.keymap.set({ 'o', 'x' }, 'R', function() flash.treesitter_search() end, { desc = "Treesitter Search" })
 vim.keymap.set('c', '<C-s>', function() flash.toggle() end, { desc = "Toggle Flash Search" })
 
+-- Debug
+vim.keymap.set('n', '<F5>', function() require 'dap'.continue() end, { desc = "Start debug" })
+vim.keymap.set('n', '<F4>', '', { noremap = true })
+vim.keymap.set('n', '<F4>', function() require 'dap'.toggle_breakpoint() end, { desc = "Toggle a breakpoint" })
