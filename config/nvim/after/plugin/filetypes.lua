@@ -5,6 +5,7 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
         vim.bo.filetype = "glsl"
     end,
 })
+-- Dotenv: Envrc
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     pattern = { "*.envrc" },
     callback = function()
@@ -12,3 +13,16 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     end,
 })
 
+-- Makefiles
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = { "*.make" },
+    callback = function()
+        vim.bo.filetype = "make"
+    end,
+})
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = { "*.h" },
+    callback = function()
+        vim.bo.filetype = "c"
+    end,
+})

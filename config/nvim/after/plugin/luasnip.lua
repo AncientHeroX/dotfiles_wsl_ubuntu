@@ -2,12 +2,7 @@ local luasnip = require("luasnip")
 local cmp = require("cmp")
 
 cmp.setup({
-
-  -- ... Your other configuration ...
-
   mapping = {
-
-    -- ... Your other mappings ...
    ['<CR>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
             if luasnip.expandable() then
@@ -42,8 +37,6 @@ cmp.setup({
       end
     end, { "i", "s" }),
 
-    -- ... Your other mappings ...
   },
 
-  -- ... Your other configuration ...
 })

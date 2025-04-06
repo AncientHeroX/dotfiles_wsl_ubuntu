@@ -124,9 +124,7 @@ return require('packer').startup(function(use)
             vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
         end,
     }
-    use {
-        'stevearc/conform.nvim',
-    }
+    use 'stevearc/conform.nvim'
     use 'mfussenegger/nvim-dap'
     use {
         'rcarriga/nvim-dap-ui',
@@ -136,4 +134,32 @@ return require('packer').startup(function(use)
         requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
     }
     use 'theHamsta/nvim-dap-virtual-text'
+    use {
+        'lewis6991/gitsigns.nvim',
+        require('gitsigns').setup()
+    }
+    use "LunarVim/bigfile.nvim"
+    use {
+        "mikavilpas/yazi.nvim",
+        requires = { "folke/snacks.nvim" },
+        config = function()
+            -- Key mappings
+            vim.api.nvim_set_keymap("n", "<leader>-", "<cmd>Yazi<cr>", { noremap = true, desc = "Open yazi at the current file" })
+            vim.api.nvim_set_keymap("v", "<leader>-", "<cmd>Yazi<cr>", { noremap = true, desc = "Open yazi at the current file" })
+            vim.api.nvim_set_keymap("n", "<leader>cw", "<cmd>Yazi cwd<cr>", { noremap = true, desc = "Open the file manager in nvim's working directory" })
+            vim.api.nvim_set_keymap("n", "<c-up>", "<cmd>Yazi toggle<cr>", { noremap = true, desc = "Resume the last yazi session" })
+
+            -- Configuration for yazi
+            require("yazi").setup({
+                open_for_directories = true,
+                keymaps = {
+                    show_help = "<f8>",
+                },
+            })
+
+            -- Disable netrw plugin if needed
+            vim.g.loaded_netrwPlugin = 1
+            vim.g.loaded_netrw = 1
+        end,
+    }
 end)
