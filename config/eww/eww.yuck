@@ -1,0 +1,80 @@
+(defvar eww_scripts "$HOME/.config/eww/scripts")
+
+(defpoll date :interval "500ms"
+  `date +'{"year": %Y, "month": "%m", "day": "%d", "weekday": "%A", "hour": "%k", "min" : "%M", "sec": "%S"}'`)
+
+(defwidget cal []
+  (box :class "cal-box"
+       :orientation "vertical"
+       :space-evenly false
+        (calendar :class "cal"
+                  :day `date +%d`
+                  :month `date +%m`
+                  :year `date +%Y`
+                  )
+        )
+  )
+
+(defwidget date_and_time []
+  (box :orientation "horizontal" 
+       :halign "end"
+       :class   "date-btn"
+
+       (button :onclick "${eww_scripts}/toggle-calendar" 
+               :class "date-button"
+               (label 
+                 :class "date-label"
+                 :text "${date.weekday} ${date.year}${date.month}${date.year} ${date.hour}:${date.min}:${date.sec}")
+               )
+       )
+  )
+
+(defwidget left []
+  (box :orientation "horizontal" 
+       (label :text "left")
+       )
+  )
+(defwidget center []
+  (box :orientation "horizontal" 
+       (label :text "center")
+       )
+  )
+(defwidget right []
+  (box :orientation "horizontal" 
+       (date_and_time)
+       )
+  )
+
+(defwidget bar_container []
+  (box :orientation "horizontal"
+       :class "bar"
+       (left)
+       (center)
+       (right)
+       )
+  )
+
+;; Windows
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "30px"
+                      :anchor "bottom center")
+  :stacking "fg"
+  :reserve (struts :distance "50px" :side "bottom")
+  :windowtype "dock"
+  :wm-ignore false
+  (bar_container)
+  )
+
+(defwindow calendar
+  :geometry (geometry :x "0%"
+                      :y "-75px"
+                      :width "260px"
+                      :height "80px"
+                      :anchor "bottom right"
+                      )
+  (cal)
+  )
