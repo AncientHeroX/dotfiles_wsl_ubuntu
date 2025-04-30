@@ -17,20 +17,27 @@ $highlight_high: #56526e;
 
 
 .bar {
-  background-color: rgba(0,0,0,0);
-  margin-left: 5px;
-  margin-right: 5px;
+  background-color: $base;
+  color: $text
 }
 
-.bar {
+.bar * {
   font-family: "Hack Nerd Font Mono";
   font-size: 16px;
   background-color: $base;
   color: $text
 }
+.div * {
+  padding: 0.25rem;
+  padding-left: 0.50em;
+  padding-right: 0.50em;
+}
 
 // Date 
 .date-button {
+  background-color: $surface;
+}
+.date-button * {
   background-color: $surface;
 }
 .date-button:hover {
@@ -39,4 +46,25 @@ $highlight_high: #56526e;
 
 .date-label {
   color: $rose;
+}
+
+// Battery 
+.battery {
+  padding-right: 1rem;
+}
+// Calendar
+calendar {
+  &.header {
+    color: $rose;
+  }
+  &:indeterminate {
+    color: $muted;
+  }
+  &:selected {
+    color: $love;
+  }
+  font-family: "Hack Nerd Font Mono";
+  background-color: $base;
+  color: $text;
+  padding: 0.2em;
 }

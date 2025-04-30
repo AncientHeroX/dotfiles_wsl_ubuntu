@@ -1,0 +1,49 @@
+#!/usr/bin/bash
+
+function percentage {
+  PERCENT=$(upower -i $(upower -e | grep 'BAT') | grep percentage | awk '{print substr($2, 1, length($2) - 1)}')
+  echo $PERCENT
+}
+
+declare -A gradient=(
+  [0]="#e01f56"
+  [5]="#e53953"
+  [10]="#ea4d51"
+  [15]="#ed5e50"
+  [20]="#f06e50"
+  [25]="#f27d52"
+  [30]="#f38c56"
+  [35]="#f49a5c"
+  [40]="#f5a763"
+  [45]="#f6b46c"
+  [50]="#f6c177"
+  [55]="#d9c271"
+  [60]="#bcc271"
+  [65]="#9fc078"
+  [70]="#82bc82"
+  [75]="#67b78e"
+  [80]="#4db19a"
+  [85]="#36aaa4"
+  [90]="#2aa2ac"
+  [95]="#2e99b0"
+  [100]="#3e8fb0")
+
+function color {
+  percent=$(percentage)
+  INDEX=$(( (percent + 2) / 5 * 5))
+  echo "${gradient[$INDEX]}"
+}
+function state {
+  STATE=$(upower -i $(upower -e | grep 'BAT') | grep state | awk '{print $2}')
+  echo $STATE
+}
+
+function get {
+  echo "{
+  \"percent\": \"$(percentage)\",
+  \"state\": \"$(state)\",
+  \"color\": \"$(color)\"
+}"
+}
+
+if [[ $1 == 'get' ]]; then get; fi

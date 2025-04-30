@@ -1,7 +1,10 @@
 (defvar eww_scripts "$HOME/.config/eww/scripts")
+(defvar eww "$HOME/.local/bin/eww")
+(defvar wifi "$HOME/.config/eww/scripts/wifi")
 
 (defpoll date :interval "500ms"
   `date +'{"year": %Y, "month": "%m", "day": "%d", "weekday": "%A", "hour": "%k", "min" : "%M", "sec": "%S"}'`)
+(defpoll power :interval "3s" :initial "{}" "$HOME/.config/eww/scripts/power get")
 
 (defwidget cal []
   (box :class "cal-box"
@@ -15,6 +18,17 @@
         )
   )
 
+(defwidget battery []
+  (box :orientation "horizontal" 
+       :class "battery"
+       :tooltip "${power.percent}%"
+       (circular-progress :value {power.percent < 98 ? power.percent : 100}
+                          :class "battery-bar"
+                          :style "color: ${power.color};"
+                          :thickness 10
+                          )
+       )
+  )
 (defwidget date_and_time []
   (box :orientation "horizontal" 
        :halign "end"
@@ -31,17 +45,23 @@
 
 (defwidget left []
   (box :orientation "horizontal" 
+       :class "div"
        (label :text "left")
        )
   )
 (defwidget center []
   (box :orientation "horizontal" 
+       :class "div"
        (label :text "center")
        )
   )
 (defwidget right []
   (box :orientation "horizontal" 
+       :class "div"
+       :space-evenly false
+       :halign "end"
        (date_and_time)
+       (battery :width "50px")
        )
   )
 
@@ -70,9 +90,9 @@
   )
 
 (defwindow calendar
-  :geometry (geometry :x "0%"
-                      :y "-75px"
-                      :width "260px"
+  :geometry (geometry :x "-3.5%"
+                      :y "-80px"
+                      :width "300px"
                       :height "80px"
                       :anchor "bottom right"
                       )
