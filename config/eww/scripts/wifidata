@@ -1,0 +1,32 @@
+#! /usr/bin/bash
+function get_networks() {
+  nmcli dev wifi rescan
+  echo $(nmcli -f SSID dev wifi)
+}
+function connection_data() {
+  networkname=$(nmcli -t -f active,ssid dev wifi | grep "^yes" | cut -d: -f2)
+  networkip=$(nmcli -t -f ip4.address dev show | head -n1 | cut -d: -f2)
+  networktype=$(nmcli -t -f TYPE,DEVICE connection show --active| head -n1 | cut -d: -f2)
+
+  icon="󱘖"
+  if [ -n "$networkname" ]; then
+    if [ "$networktype" = "wlo1" ]; then
+      icon="󰤨"
+    else
+      icon=""
+    fi
+  else 
+    networkname="disconnected"
+  fi
+  echo "{
+    \"name\": \"${networkname}\",
+    \"icon\": \"${icon}\",
+    \"ip\": \"${networkip}\"
+  }"
+}
+
+echo "{
+  \"networks\": \"$(get_networks)\",
+  \"current_connection\": $(connection_data)
+}"
+

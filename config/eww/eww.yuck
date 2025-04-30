@@ -1,10 +1,10 @@
 (defvar eww_scripts "$HOME/.config/eww/scripts")
 (defvar eww "$HOME/.local/bin/eww")
-(defvar wifi "$HOME/.config/eww/scripts/wifi")
 
 (defpoll date :interval "500ms"
   `date +'{"year": %Y, "month": "%m", "day": "%d", "weekday": "%A", "hour": "%k", "min" : "%M", "sec": "%S"}'`)
 (defpoll power :interval "3s" :initial "{}" "$HOME/.config/eww/scripts/power get")
+(defpoll wifidata :interval "5s" "$HOME/.config/eww/scripts/wifidata")
 
 (defwidget cal []
   (box :class "cal-box"
@@ -16,6 +16,19 @@
                   :year `date +%Y`
                   )
         )
+  )
+
+(defwidget wifi []
+  (box :orientation "horizontal" 
+       :class "wifi"
+       (button 
+         :class "wifi-button"
+
+         (label :text {wifidata.current_connection.icon}
+                :tooltip "${wifidata.current_connection.name} - ${wifidata.current_connection.ip}"
+                )
+         )
+       )
   )
 
 (defwidget battery []
@@ -60,6 +73,7 @@
        :class "div"
        :space-evenly false
        :halign "end"
+       (wifi)
        (date_and_time)
        (battery :width "50px")
        )

@@ -68,3 +68,23 @@ calendar {
   color: $text;
   padding: 0.2em;
 }
+
+// Wifi
+.wifi-button:hover {
+  background-color: $highlight_low;
+  &label {
+    background-color: $highlight_low;
+  }
+}
+.wifi-button {
+  margin: 0;
+  padding: 0;
+}
+.wifi-button label{
+  color: $foam;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.50rem;
+  padding-right: 0.50rem;
+}
