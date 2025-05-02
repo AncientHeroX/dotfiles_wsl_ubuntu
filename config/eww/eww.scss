@@ -80,7 +80,37 @@ calendar {
   margin: 0;
   padding: 0;
 }
+.wifi-sel {
+  background-color: $base;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .wifi-button label{
+  color: $foam;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.50rem;
+  padding-right: 0.50rem;
+}
+.wifi-sel .net-option button {
+  margin: 0;
+  padding: 0;
+  &:hover {
+    background-color: white;
+  }
+}
+.wifi-sel .net-option {
+  background-color: $base;
+}
+.wifi-sel .net-option * {
+  color: $text;
+  background-color: $base;
+}
+
+// Volume
+.volume label { 
   color: $foam;
   font-size: 1.8rem;
   margin: 0;

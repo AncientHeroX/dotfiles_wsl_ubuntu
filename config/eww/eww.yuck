@@ -1,36 +1,30 @@
 (defvar eww_scripts "$HOME/.config/eww/scripts")
 (defvar eww "$HOME/.local/bin/eww")
+(defvar volumelevel "")
+(defvar networks "")
 
 (defpoll date :interval "500ms"
   `date +'{"year": %Y, "month": "%m", "day": "%d", "weekday": "%A", "hour": "%k", "min" : "%M", "sec": "%S"}'`)
 (defpoll power :interval "3s" :initial "{}" "$HOME/.config/eww/scripts/power get")
-(defpoll wifidata :interval "5s" "$HOME/.config/eww/scripts/wifidata")
-
-(defwidget cal []
-  (box :class "cal-box"
-       :orientation "vertical"
-       :space-evenly false
-        (calendar :class "cal"
-                  :day `date +%d`
-                  :month `date +%m`
-                  :year `date +%Y`
-                  )
-        )
-  )
+(defpoll wifidata :interval "5s" "$HOME/.config/eww/scripts/wifidata current")
 
 (defwidget wifi []
   (box :orientation "horizontal" 
        :class "wifi"
-       (button 
-         :class "wifi-button"
-
-         (label :text {wifidata.current_connection.icon}
-                :tooltip "${wifidata.current_connection.name} - ${wifidata.current_connection.ip}"
-                )
+       (button :onclick "${eww_scripts}/toggle-wifi"
+               :class "wifi-button"
+               (label :text {wifidata.current_connection.icon}
+                      :tooltip "${wifidata.current_connection.name} - ${wifidata.current_connection.ip}"
+                      )
          )
        )
   )
-
+(defwidget volume []
+  (box :orientation "horizontal" 
+       :class "volume"
+       (label :text "")
+       )
+  )
 (defwidget battery []
   (box :orientation "horizontal" 
        :class "battery"
@@ -46,7 +40,6 @@
   (box :orientation "horizontal" 
        :halign "end"
        :class   "date-btn"
-
        (button :onclick "${eww_scripts}/toggle-calendar" 
                :class "date-button"
                (label 
@@ -73,6 +66,7 @@
        :class "div"
        :space-evenly false
        :halign "end"
+       (volume)
        (wifi)
        (date_and_time)
        (battery :width "50px")
@@ -111,4 +105,47 @@
                       :anchor "bottom right"
                       )
   (cal)
+  )
+
+(defwindow wifi-window
+  :geometry (geometry :x "-16%"
+                      :y "-80px"
+                      :width "180px"
+                      :anchor "bottom right"
+                      )
+  (wifi-selector)
+)
+;; Popups
+(defwidget cal []
+  (box :class "cal-box"
+       :orientation "vertical"
+       :space-evenly false
+        (calendar :class "cal"
+                  :day `date +%d`
+                  :month `date +%m`
+                  :year `date +%Y`
+                  )
+        )
+  )
+
+(defwidget wifi-selector []
+  (box :class "wifi-sel"
+       :orientation "vertical"
+       :space-evenly false
+       (for item in networks 
+            (box
+              :class "net-option"
+              :orientation "h"
+              (label :text {item.id}
+                     :class "net-name"
+                     )
+              (label :text {item.bar}
+                     :class "net-bar"
+                     )
+              (button :onclick "${eww_scripts}/wifidata toggle '${item.id}'"
+                      { item?.isactive == "yes" ? "  disconnect" : "  connect   " }
+                      )
+              )
+            )
+       )
   )
