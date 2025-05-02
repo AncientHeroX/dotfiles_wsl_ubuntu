@@ -108,7 +108,7 @@
   )
 
 (defwindow wifi-window
-  :geometry (geometry :x "-16%"
+  :geometry (geometry :x "-8%"
                       :y "-80px"
                       :width "180px"
                       :anchor "bottom right"

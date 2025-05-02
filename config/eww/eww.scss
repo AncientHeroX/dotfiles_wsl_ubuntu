@@ -97,8 +97,10 @@ calendar {
 .wifi-sel .net-option button {
   margin: 0;
   padding: 0;
-  &:hover {
-    background-color: white;
+}
+.wifi-sel .net-option button:hover {
+  &label {
+    background-color: $surface;
   }
 }
 .wifi-sel .net-option {
