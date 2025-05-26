@@ -1,0 +1,13 @@
+#! /usr/bin/bash
+
+session=$(tmux ls | fzf)
+if [ $? == 0 ]; then 
+    IFS=':' read -ra arr <<< "$session" 
+
+    tmux attach -t "${arr[0]}"
+else
+    echo "Canceled"
+fi
+
+#print "$($session)" | fzf
+

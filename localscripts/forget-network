@@ -1,0 +1,10 @@
+#! /usr/bin/bash
+
+network_name=$(nmcli -t -f NAME connection show | fzf)
+
+if [[ -n "${network_name}" ]]; then
+  nmcli connection  delete "${network_name}"
+else
+  echo "Canceled"
+fi
+

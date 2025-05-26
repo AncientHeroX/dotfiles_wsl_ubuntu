@@ -1,0 +1,45 @@
+#! /usr/bin/bash
+
+checkArgs(){
+    read newArgs
+    _remove ${newArgs}
+}
+
+files=()
+flags=()
+
+for arg in "$@"; do
+    # Check if the argument does not start with a hyphen
+    if [[ ! "$arg" =~ ^- ]]; then
+        files+=("$arg")
+    else
+        flags+=("$arg")
+    fi
+done
+
+if [[ ${#files[@]} -gt 0 ]]; then
+    echo ""
+    echo "Do you want to permenantly remove '${files[@]}'? y/n "
+    read confirm
+    if [[ ${confirm} == "y" ]] || [[ {${confirm} == "Y" ]]; then
+        declare returnMsg
+        
+        if [[ ${#flags[@]} -gt 0 ]]; then
+            returnMsg=$(\rm ${flags[@]} ${files[@]} 2>&1)
+        else
+            returnMsg=$(\rm ${files[@]} 2>&1)
+        fi
+        if [[ $? -eq 0 ]]; then
+            echo -e "\e[32mDone\e[0m"
+            exit 0
+        else
+            echo -e "\e[31mSomething went wrong\n  ${returnMsg}\e[0m"
+            exit 1
+        fi
+    else
+        echo "Exiting"
+    fi
+else
+    echo "Remove what?"
+    checkArgs
+fi

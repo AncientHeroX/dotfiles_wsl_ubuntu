@@ -1,0 +1,6 @@
+#! /usr/bin/bash
+
+TouchpadData="$(xinput --list | grep '[Tt]ouch[Pp]ad')"
+TouchpadId="$(echo $TouchpadData | gawk '{ match($0, /id=([^ ]+)/, arr); print arr[1] }')"
+xinput set-prop $TouchpadId "Synaptics Scrolling Distance" -112 -112
+

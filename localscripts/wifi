@@ -1,0 +1,12 @@
+#! /usr/bin/bash
+
+nmcli dev wifi rescan
+SSID=$(nmcli -f SSID dev wifi | tail -n +2 | fzf --prompt="Select a WiFi network: ")
+
+tSSID="${SSID%"${SSID##*[![:space:]]}"}"
+
+if [[ -n "$tSSID" ]]; then 
+  echo `nmcli device wifi connect "$tSSID"`
+else 
+  echo "Canceled"
+fi
