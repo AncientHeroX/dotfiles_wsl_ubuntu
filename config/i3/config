@@ -209,7 +209,7 @@ workspace 10 gaps inner 20
 for_window [class=".*"] border pixel 0
 
 # Custom keybinds 
-bindsym Mod4+n exec --no-startup-id firefox-esr
+bindsym Mod4+n exec --no-startup-id librewolf
 bindsym Mod4+x exec --no-startup-id $HOME/.local/bin/powermenu.sh
 bindsym Mod4+m exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/eduardglez/.config/i3/applets-workspace.json; exec --no-startup-id gnome-system-monitor; exec --no-startup-id gnome-clocks; exec --no-startup-id gnome-calendar;'"
 bindsym Mod4+d exec --no-startup-id $HOME/.config/rofi/launchers/type-3/launcher.sh
@@ -243,4 +243,4 @@ client.background        $base
 exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/background/0060_soho_vibes.jpg
 exec_always --no-startup-id picom
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id xinput set-prop "CUST0001:00 06CB:7E7E Touchpad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id /home/eduardglez/.local/bin/disable-natural-scrolling

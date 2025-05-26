@@ -20,7 +20,11 @@ end
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', project_files, {})
 vim.keymap.set('n', '<leader>ps', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+    vim.ui.input({ prompt = "Grep > " }, function(input)
+    if input and input ~= "" then
+      builtin.grep_string({ search = input })
+    end
+  end)
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 

@@ -6,6 +6,10 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
+# use the Gnu C Compiler 
+#export CC=gcc
+#export CXX=gcc
+
 setopt SHARE_HISTORY
 setopt autocd nomatch
 unsetopt beep
@@ -32,10 +36,36 @@ alias l='ls -CF'
 alias lt="eza -lT --hyperlink --icons=always --level=3"
 alias bat='batcat --theme="Rose_Pine" --style="plain"'
 alias cd="z"
-alias makehome="alias cx='z $(pwd) || z'"
 alias rm='_remove'
 alias tp="trash-put"
+alias fixmyterminalinput='stty sane'
+alias top='btop'
+alias ts='tmux-sessionizer'
 
+function makehome()
+{
+    export BASE=$(pwd)
+    alias cx="z $BASE || z"
+}
+function togglecapsbtn()
+{
+    if test -f '/etc/systemd/system/multi-user.target.wants/keyd.service'; then
+        sudo systemctl disable --now keyd
+        echo "Keyd disabled"
+    else
+        sudo systemctl enable --now keyd
+        echo "Keyd enabled"
+    fi
+}
+function decrypt()
+{
+    if  [ $# -eq 0 ]; then
+        echo "No file"
+    else
+        openssl aes-256-cbc -d -pbkdf2 -out "$1.out" -in $1
+    fi
+
+}
 # cd but in the windows dir
 function cdwin() {
     if [ $# -eq 0 ]; then
@@ -59,6 +89,8 @@ function devserv() {
 # Set the PROMPT_COMMAND to call the update_ps1 function before each prompt is shown
 alias vim="nvim"
 alias windir="cd '/mnt/c/Users/Gonzalez E/'" 
+
+export BASE=$(pwd)
 alias cx="z $BASE || z"
 
 
@@ -75,21 +107,13 @@ export PATH=$PATH:/home/eduardglez/.keymapp
 export PATH=$PATH:/home/eduardglez/.zig
 export PATH=$PATH:/home/eduardglez/.local/bin
 export PATH=$PATH:/home/eduardglez/.local/go/bin
-# export PATH=$PATH:$BUN_INSTALL/bin
 
 export ANDROID_HOME=$HOME/android
 export PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
-# EMULATOR GOES HERE
-# PLATFORM TOOLS GO HERE
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 export EDITOR="nvim"
 export TERMINAL=wezterm
-
 export REDIS_JSON_SO=/home/eduardglez/Downloads/RedisJSON/target/release/librejson.so
+export PYTHONPATH=/bin/python3
 
 eval "$(oh-my-posh init zsh --config ~/.poshthemes/rose_pine.omp.json)"
 alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
@@ -124,3 +148,8 @@ function y() {
 }
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+

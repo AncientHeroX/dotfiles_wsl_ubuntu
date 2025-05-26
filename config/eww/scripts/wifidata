@@ -42,10 +42,11 @@ elif [[ $1 == 'networks' ]]; then
   echo "$(get_networks)"
 elif [[ $1 == 'toggle' ]]; then
   netname=$2
-  status=$(nmcli -t -f SSID,ACTIVE dev wifi | grep "${netname}" | awk -F: '$1 != "" {printf("{ \"name\": \"%s\", \"isactive\":\"%s\" }", $1, $2)}')
+  status=$(nmcli -t -f SSID,ACTIVE dev wifi | grep "${netname}" | head -n1 | awk -F: '$1 != "" {printf("{ \"name\": \"%s\", \"isactive\":\"%s\" }", $1, $2)}')
 
   got_name=$(echo ${status} | jq -r ".name")
   active=$(echo ${status}  | jq -r ".isactive")
+  echo $got_name
 
   if [[ "${got_name}" == "$2" ]]; then
     if [[ "${active}" == "yes" ]]; then

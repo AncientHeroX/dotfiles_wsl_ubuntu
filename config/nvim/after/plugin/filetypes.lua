@@ -26,3 +26,17 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
         vim.bo.filetype = "c"
     end,
 })
+
+vim.api.nvim_create_autocmd("filetype", {
+  pattern = {"html", "htmldjango"},
+  callback = function ()
+    vim.bo.tabstop = 4
+    vim.bo.softtabstop = 4
+    vim.bo.shiftwidth = 4
+    require("ibl").setup({
+      scope = {
+        enabled = false,
+      }
+    });
+  end
+})

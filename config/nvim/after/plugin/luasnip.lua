@@ -38,5 +38,7 @@ cmp.setup({
     end, { "i", "s" }),
 
   },
-
+  matching = {
+      disallow_partial_fuzzy_matching = false
+  }
 })

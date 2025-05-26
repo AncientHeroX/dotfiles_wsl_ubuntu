@@ -147,12 +147,17 @@ _G.packer_plugins = {
     url = "https://github.com/theprimeagen/harpoon"
   },
   ["hlchunk.nvim"] = {
-    config = { "\27LJ\2\n™\4\0\0\6\0\17\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0004\4\3\0005\5\4\0>\5\1\0045\5\5\0>\5\2\4=\4\6\0035\4\a\0=\4\b\3=\3\n\0025\3\v\0005\4\f\0=\4\b\0035\4\r\0=\4\6\3=\3\14\0025\3\15\0=\3\16\2B\0\2\1K\0\1\0\rline_num\1\0\2\venable\2\nstyle\f#ac92d1\vindent\1\2\0\0\f#6e6a86\1\2\0\0\bâ”‚\1\0\a\venable\2\nstyle\0\nchars\0\rpriority\3\n\ndelay\3d\19use_treesitter\2\16ahead_lines\3\5\nchunk\1\0\3\nchunk\0\vindent\0\rline_num\0\nchars\1\0\5\rleft_top\bâ•­\16left_bottom\bâ•°\16right_arrow\6>\20horizontal_line\bâ”€\18vertical_line\bâ”‚\nstyle\1\0\1\afg\f#c21f30\1\0\1\afg\f#ac92d1\1\0\n\rpriority\3\15\nchars\0\rduration\3d\ndelay\3\0\19use_treesitter\1\venable\2\nstyle\0\18max_file_size\3€€@\15error_sign\2\15textobject\aic\nsetup\fhlchunk\frequire\0" },
+    config = { "\27LJ\2\n¯\4\0\0\6\0\17\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0004\4\3\0005\5\4\0>\5\1\0045\5\5\0>\5\2\4=\4\6\0035\4\a\0=\4\b\3=\3\n\0025\3\v\0005\4\f\0=\4\b\0035\4\r\0=\4\6\3=\3\14\0025\3\15\0=\3\16\2B\0\2\1K\0\1\0\rline_num\1\0\2\nstyle\f#ac92d1\venable\2\vindent\1\2\0\0\f#6e6a86\1\2\0\0\bâ”‚\1\0\a\nstyle\0\16ahead_lines\3\5\nchars\0\ndelay\3d\19use_treesitter\2\rpriority\3\n\venable\2\nchunk\1\0\3\vindent\0\nchunk\0\rline_num\0\nchars\1\0\5\16right_arrow\6>\16left_bottom\bâ•°\rleft_top\bâ•­\18vertical_line\bâ”‚\20horizontal_line\bâ”€\nstyle\1\0\2\14underline\1\afg\f#c21f30\1\0\2\14underline\1\afg\f#ac92d1\1\0\n\rduration\3d\nchars\0\ndelay\3\0\19use_treesitter\2\15textobject\aic\nstyle\0\15error_sign\2\18max_file_size\3€€@\rpriority\3\15\venable\2\nsetup\fhlchunk\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
     path = "/home/eduardglez/.local/share/nvim/site/pack/packer/opt/hlchunk.nvim",
     url = "https://github.com/shellRaining/hlchunk.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/eduardglez/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -282,22 +287,23 @@ _G.packer_plugins = {
     url = "https://github.com/tikhomirov/vim-glsl"
   },
   ["yazi.nvim"] = {
-    config = { "\27LJ\2\nø\4\0\0\6\0\24\00016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\a\0'\3\4\0'\4\5\0005\5\b\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0005\5\v\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\f\0'\4\r\0005\5\14\0B\0\5\0016\0\15\0'\2\16\0B\0\2\0029\0\17\0005\2\18\0005\3\19\0=\3\20\2B\0\2\0016\0\0\0009\0\21\0)\1\1\0=\1\22\0006\0\0\0009\0\21\0)\1\1\0=\1\23\0K\0\1\0\17loaded_netrw\23loaded_netrwPlugin\6g\fkeymaps\1\0\1\14show_help\t<f8>\1\0\2\fkeymaps\0\25open_for_directories\2\nsetup\tyazi\frequire\1\0\2\fnoremap\2\tdesc!Resume the last yazi session\25<cmd>Yazi toggle<cr>\v<c-up>\1\0\2\fnoremap\2\tdesc6Open the file manager in nvim's working directory\22<cmd>Yazi cwd<cr>\15<leader>cw\1\0\2\fnoremap\2\tdesc\"Open yazi at the current file\6v\1\0\2\fnoremap\2\tdesc\"Open yazi at the current file\18<cmd>Yazi<cr>\14<leader>-\6n\20nvim_set_keymap\bapi\bvim\0" },
+    config = { "\27LJ\2\nø\4\0\0\6\0\24\00016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\a\0'\3\4\0'\4\5\0005\5\b\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0005\5\v\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\f\0'\4\r\0005\5\14\0B\0\5\0016\0\15\0'\2\16\0B\0\2\0029\0\17\0005\2\18\0005\3\19\0=\3\20\2B\0\2\0016\0\0\0009\0\21\0)\1\1\0=\1\22\0006\0\0\0009\0\21\0)\1\1\0=\1\23\0K\0\1\0\17loaded_netrw\23loaded_netrwPlugin\6g\fkeymaps\1\0\1\14show_help\t<f8>\1\0\2\25open_for_directories\2\fkeymaps\0\nsetup\tyazi\frequire\1\0\2\tdesc!Resume the last yazi session\fnoremap\2\25<cmd>Yazi toggle<cr>\v<c-up>\1\0\2\tdesc6Open the file manager in nvim's working directory\fnoremap\2\22<cmd>Yazi cwd<cr>\15<leader>cw\1\0\2\tdesc\"Open yazi at the current file\fnoremap\2\6v\1\0\2\tdesc\"Open yazi at the current file\fnoremap\2\18<cmd>Yazi<cr>\14<leader>-\6n\20nvim_set_keymap\bapi\bvim\0" },
     loaded = true,
     path = "/home/eduardglez/.local/share/nvim/site/pack/packer/start/yazi.nvim",
     url = "https://github.com/mikavilpas/yazi.nvim"
+  },
+  ["yuck.vim"] = {
+    loaded = true,
+    path = "/home/eduardglez/.local/share/nvim/site/pack/packer/start/yuck.vim",
+    url = "https://github.com/elkowar/yuck.vim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: actions-preview.nvim
-time([[Config for actions-preview.nvim]], true)
-try_loadstring("\27LJ\2\nr\0\0\a\0\b\0\v6\0\0\0009\0\1\0009\0\2\0005\2\3\0'\3\4\0006\4\5\0'\6\6\0B\4\2\0029\4\a\4B\0\4\1K\0\1\0\17code_actions\20actions-preview\frequire\agf\1\3\0\0\6v\6n\bset\vkeymap\bvim\0", "config", "actions-preview.nvim")
-time([[Config for actions-preview.nvim]], false)
--- Config for: yazi.nvim
-time([[Config for yazi.nvim]], true)
-try_loadstring("\27LJ\2\nø\4\0\0\6\0\24\00016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\a\0'\3\4\0'\4\5\0005\5\b\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0005\5\v\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\f\0'\4\r\0005\5\14\0B\0\5\0016\0\15\0'\2\16\0B\0\2\0029\0\17\0005\2\18\0005\3\19\0=\3\20\2B\0\2\0016\0\0\0009\0\21\0)\1\1\0=\1\22\0006\0\0\0009\0\21\0)\1\1\0=\1\23\0K\0\1\0\17loaded_netrw\23loaded_netrwPlugin\6g\fkeymaps\1\0\1\14show_help\t<f8>\1\0\2\fkeymaps\0\25open_for_directories\2\nsetup\tyazi\frequire\1\0\2\fnoremap\2\tdesc!Resume the last yazi session\25<cmd>Yazi toggle<cr>\v<c-up>\1\0\2\fnoremap\2\tdesc6Open the file manager in nvim's working directory\22<cmd>Yazi cwd<cr>\15<leader>cw\1\0\2\fnoremap\2\tdesc\"Open yazi at the current file\6v\1\0\2\fnoremap\2\tdesc\"Open yazi at the current file\18<cmd>Yazi<cr>\14<leader>-\6n\20nvim_set_keymap\bapi\bvim\0", "config", "yazi.nvim")
-time([[Config for yazi.nvim]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
+time([[Config for nvim-dap-ui]], false)
 -- Config for: better-diagnostic-virtual-text
 time([[Config for better-diagnostic-virtual-text]], true)
 try_loadstring("\27LJ\2\nL\0\1\4\0\3\0\0066\1\0\0'\3\1\0B\1\2\0029\1\2\1B\1\1\1K\0\1\0\nsetup#better-diagnostic-virtual-text\frequire\0", "config", "better-diagnostic-virtual-text")
@@ -306,10 +312,14 @@ time([[Config for better-diagnostic-virtual-text]], false)
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
--- Config for: nvim-dap-ui
-time([[Config for nvim-dap-ui]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
-time([[Config for nvim-dap-ui]], false)
+-- Config for: actions-preview.nvim
+time([[Config for actions-preview.nvim]], true)
+try_loadstring("\27LJ\2\nr\0\0\a\0\b\0\v6\0\0\0009\0\1\0009\0\2\0005\2\3\0'\3\4\0006\4\5\0'\6\6\0B\4\2\0029\4\a\4B\0\4\1K\0\1\0\17code_actions\20actions-preview\frequire\agf\1\3\0\0\6v\6n\bset\vkeymap\bvim\0", "config", "actions-preview.nvim")
+time([[Config for actions-preview.nvim]], false)
+-- Config for: yazi.nvim
+time([[Config for yazi.nvim]], true)
+try_loadstring("\27LJ\2\nø\4\0\0\6\0\24\00016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\a\0'\3\4\0'\4\5\0005\5\b\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0005\5\v\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\f\0'\4\r\0005\5\14\0B\0\5\0016\0\15\0'\2\16\0B\0\2\0029\0\17\0005\2\18\0005\3\19\0=\3\20\2B\0\2\0016\0\0\0009\0\21\0)\1\1\0=\1\22\0006\0\0\0009\0\21\0)\1\1\0=\1\23\0K\0\1\0\17loaded_netrw\23loaded_netrwPlugin\6g\fkeymaps\1\0\1\14show_help\t<f8>\1\0\2\25open_for_directories\2\fkeymaps\0\nsetup\tyazi\frequire\1\0\2\tdesc!Resume the last yazi session\fnoremap\2\25<cmd>Yazi toggle<cr>\v<c-up>\1\0\2\tdesc6Open the file manager in nvim's working directory\fnoremap\2\22<cmd>Yazi cwd<cr>\15<leader>cw\1\0\2\tdesc\"Open yazi at the current file\fnoremap\2\6v\1\0\2\tdesc\"Open yazi at the current file\fnoremap\2\18<cmd>Yazi<cr>\14<leader>-\6n\20nvim_set_keymap\bapi\bvim\0", "config", "yazi.nvim")
+time([[Config for yazi.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

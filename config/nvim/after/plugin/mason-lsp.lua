@@ -7,5 +7,17 @@ mason.setup_handlers({
         if server_name ~= 'jdtls' then
             require("lspconfig")[server_name].setup({})
         end
-    end
+    end,
+     -- Custom config for pyright
+  ["pyright"] = function()
+    require("lspconfig").pyright.setup({
+      settings = {
+        python = {
+          analysis = {
+            typeCheckingMode = "off", -- Or "basic"
+          },
+        },
+      },
+    })
+  end,
 })

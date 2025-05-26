@@ -1,4 +1,3 @@
-
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -37,9 +36,9 @@ return require('packer').startup(function(use)
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
+            { 'saadparwaiz1/cmp_luasnip' },
 
             { 'L3MON4D3/LuaSnip' }, -- Required
         }
@@ -72,10 +71,10 @@ return require('packer').startup(function(use)
                     enable = true,
                     priority = 15,
                     style = {
-                        { fg = "#ac92d1" },
-                        { fg = "#c21f30" },
+                        { fg = "#ac92d1", underline = false },
+                        { fg = "#c21f30", underline = false },
                     },
-                    use_treesitter = false,
+                    use_treesitter = true,
                     chars = {
                         horizontal_line = "─",
                         vertical_line = "│",
@@ -125,29 +124,38 @@ return require('packer').startup(function(use)
         end,
     }
     use 'stevearc/conform.nvim'
+
+    -- Debugging
     use 'mfussenegger/nvim-dap'
     use {
         'rcarriga/nvim-dap-ui',
+        tag = "v4.0.0",
         config = function()
             require('dapui').setup()
         end,
-        requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
+        requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
     }
     use 'theHamsta/nvim-dap-virtual-text'
     use {
         'lewis6991/gitsigns.nvim',
         require('gitsigns').setup()
     }
+
     use "LunarVim/bigfile.nvim"
+    -- Navigation
     use {
         "mikavilpas/yazi.nvim",
         requires = { "folke/snacks.nvim" },
         config = function()
             -- Key mappings
-            vim.api.nvim_set_keymap("n", "<leader>-", "<cmd>Yazi<cr>", { noremap = true, desc = "Open yazi at the current file" })
-            vim.api.nvim_set_keymap("v", "<leader>-", "<cmd>Yazi<cr>", { noremap = true, desc = "Open yazi at the current file" })
-            vim.api.nvim_set_keymap("n", "<leader>cw", "<cmd>Yazi cwd<cr>", { noremap = true, desc = "Open the file manager in nvim's working directory" })
-            vim.api.nvim_set_keymap("n", "<c-up>", "<cmd>Yazi toggle<cr>", { noremap = true, desc = "Resume the last yazi session" })
+            vim.api.nvim_set_keymap("n", "<leader>-", "<cmd>Yazi<cr>",
+                { noremap = true, desc = "Open yazi at the current file" })
+            vim.api.nvim_set_keymap("v", "<leader>-", "<cmd>Yazi<cr>",
+                { noremap = true, desc = "Open yazi at the current file" })
+            vim.api.nvim_set_keymap("n", "<leader>cw", "<cmd>Yazi cwd<cr>",
+                { noremap = true, desc = "Open the file manager in nvim's working directory" })
+            vim.api.nvim_set_keymap("n", "<c-up>", "<cmd>Yazi toggle<cr>",
+                { noremap = true, desc = "Resume the last yazi session" })
 
             -- Configuration for yazi
             require("yazi").setup({
@@ -162,4 +170,7 @@ return require('packer').startup(function(use)
             vim.g.loaded_netrw = 1
         end,
     }
+    use "lukas-reineke/indent-blankline.nvim"
+    -- EWW dev
+    use "elkowar/yuck.vim"
 end)
